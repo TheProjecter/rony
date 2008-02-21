@@ -1,0 +1,32 @@
+# Printer configuration file for CUPS v1.3.5
+# Written by cupsd on 2008-02-21 17:25
+<Printer Samsung_SCX-4200_USB>
+Info Samsung SCX-4200 Series
+Location T61
+DeviceURI usb://Samsung/SCX-4200%20Series
+State Stopped
+StateMessage Paused
+StateTime 1203490258
+Accepting Yes
+Shared Yes
+JobSheets none none
+QuotaPeriod 0
+PageLimit 0
+KLimit 0
+OpPolicy default
+ErrorPolicy stop-printer
+</Printer>
+<Printer SCX4200@WLHDD>
+Info SCX4200@WLHDD
+DeviceURI socket://192.168.25.1:9100
+State Idle
+StateTime 1203585624
+Accepting Yes
+Shared Yes
+JobSheets none none
+QuotaPeriod 0
+PageLimit 0
+KLimit 0
+OpPolicy default
+ErrorPolicy stop-printer
+</Printer>
