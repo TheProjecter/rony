@@ -21,6 +21,28 @@ case "$group" in
 				/sbin/init 0
 				;;
 
+            # For ThinkPad T61
+			mute)
+				/usr/bin/amixer -q set Master mute
+				;;
+			volumedown)
+				/usr/bin/amixer -q set Master unmute
+				/usr/bin/amixer -q set Master 10-
+				;;
+			volumeup)
+				/usr/bin/amixer -q set Master unmute
+				/usr/bin/amixer -q set Master 10+
+				;;
+			screenlock)
+				;;
+            fnf9)
+                eject /dev/sr0
+                ;;
+            suspend)
+                /usr/sbin/pm-suspend
+                ;;
+            zoom)
+                ;;
 			# if your laptop doesnt turn on/off the display via hardware
 			# switch and instead just generates an acpi event, you can force
 			# X to turn off the display via dpms.  note you will have to run
