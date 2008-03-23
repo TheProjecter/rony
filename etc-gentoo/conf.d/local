@@ -5,6 +5,31 @@ local_start() {
 	# This is a good place to load any misc programs
 	# on startup (use &>/dev/null to hide output)
 
+	# PowerTOP
+	F=/proc/sys/vm/dirty_writeback_centisecs
+	[ -f ${F} ] && echo 1500 > ${F}
+	F=/sys/class/scsi_host/host0/link_power_management_policy
+	[ -f {$F} ] && echo min_power ${F}
+	# iwconfig wlan0 power timeout 500ms
+
+	# ThinkPad battery threshold
+	modprobe tp_smapi
+	F=/sys/devices/platform/smapi/BAT0
+	[ -d ${F} ] && {
+		echo 40 > ${F}/start_charge_thresh
+		echo 70 > ${F}/stop_charge_thresh
+	} || {
+		echo ThinkPad SMAPI does not exist
+	}
+
+	# ThinkPad bluetooth off
+	F=/sys/devices/platform/thinkpad_acpi/bluetooth_enable
+	[ -f ${F} ] && echo 0 > ${F}
+
+
+	# Gentoo portage tmpdir
+	[ -d /tmp/.emerge ] || mkdir -p /tmp/.emerge
+
 	# We should always return 0
 	return 0
 }
