@@ -1,0 +1,7 @@
+
+
+
+
+CHOST="i586-pc-plinux-gnu"
+
+CFLAGS="-cpu-bative -mtune=native -mmmx -m3dnow -Os"
