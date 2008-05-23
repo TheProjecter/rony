@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<opml version="1.0">
+  <head>
+    <title>Liferea Feed List Export</title>
+  </head>
+  <body>
+    <outline title="UO Stratics News" text="UO Stratics News" description="UO Stratics News" type="rss" id="qynnech" sortColumn="time" viewMode="0" htmlUrl="http://uo.stratics.com" xmlUrl="http://uo.stratics.com/php-bin/rss/raw.php" updateInterval="-1"/>
+    <outline title="Gentoo Packages" text="Gentoo Packages" description="Gentoo Packages" type="pie" id="npawmel" sortColumn="time" viewMode="0" htmlUrl="http://packages.gentoo.org/" xmlUrl="http://packages.gentoo.org/feed/" updateInterval="-1"/>
+    <outline title="Hong Kong" text="Hong Kong" description="Hong Kong" type="folder" id="isnkwmb" sortColumn="time" viewMode="0" expanded="true">
+      <outline title="&#x9999;&#x6E2F;&#x8CBF;&#x6613;&#x767C;&#x5C55;&#x5C40;&#x65B0;&#x805E;" text="&#x9999;&#x6E2F;&#x8CBF;&#x6613;&#x767C;&#x5C55;&#x5C40;&#x65B0;&#x805E;" description="&#x9999;&#x6E2F;&#x8CBF;&#x6613;&#x767C;&#x5C55;&#x5C40;&#x65B0;&#x805E;" type="rss" id="kxiyvpg" sortColumn="time" viewMode="0" htmlUrl="http://www.tdctrade.com/tdcnews/chinese/" xmlUrl="http://www.tdctrade.com/rss/tdcnews_c.xml" updateInterval="-1"/>
+      <outline title="&#x9999;&#x6E2F;&#x653F;&#x5E9C;&#x65B0;&#x805E;&#x7DB2; - &#x8CA1;&#x7D93;" text="&#x9999;&#x6E2F;&#x653F;&#x5E9C;&#x65B0;&#x805E;&#x7DB2; - &#x8CA1;&#x7D93;" description="&#x9999;&#x6E2F;&#x653F;&#x5E9C;&#x65B0;&#x805E;&#x7DB2; - &#x8CA1;&#x7D93;" type="rss" id="rttvibg" sortColumn="time" viewMode="0" htmlUrl="http://www.news.gov.hk/tc/category/businessandfinance/html/index.htm" xmlUrl="http://www.news.gov.hk/rss/news/businessandfinance_zh.xml" updateInterval="-1"/>
+      <outline title="CEO &#x5C08;&#x8A0A;" text="CEO &#x5C08;&#x8A0A;" description="CEO &#x5C08;&#x8A0A;" type="rss" id="vvhklkf" sortColumn="time" viewMode="0" htmlUrl="http://ceo.tdctrade.com/" xmlUrl="http://www.tdctrade.com/rss/hkTraderNews_chi.xml" updateInterval="-1"/>
+      <outline title="&#x9999;&#x6E2F;&#x653F;&#x5E9C;&#x65B0;&#x805E;&#x7DB2; - &#x6559;&#x80B2;&#x8207;&#x5C31;&#x696D;" text="&#x9999;&#x6E2F;&#x653F;&#x5E9C;&#x65B0;&#x805E;&#x7DB2; - &#x6559;&#x80B2;&#x8207;&#x5C31;&#x696D;" description="&#x9999;&#x6E2F;&#x653F;&#x5E9C;&#x65B0;&#x805E;&#x7DB2; - &#x6559;&#x80B2;&#x8207;&#x5C31;&#x696D;" type="rss" id="oalvrjf" sortColumn="time" viewMode="0" htmlUrl="http://www.news.gov.hk/tc/category/atschool/html/index.htm" xmlUrl="http://www.news.gov.hk/rss/news/atschool_zh.xml" updateInterval="-1"/>
+      <outline title="&#x9999;&#x6E2F;&#x653F;&#x5E9C;&#x65B0;&#x805E;&#x7DB2; - &#x6CBB;&#x5B89;" text="&#x9999;&#x6E2F;&#x653F;&#x5E9C;&#x65B0;&#x805E;&#x7DB2; - &#x6CBB;&#x5B89;" description="&#x9999;&#x6E2F;&#x653F;&#x5E9C;&#x65B0;&#x805E;&#x7DB2; - &#x6CBB;&#x5B89;" type="rss" id="vgldwaa" sortColumn="time" viewMode="0" htmlUrl="http://www.news.gov.hk/tc/category/lawandorder/html/index.htm" xmlUrl="http://www.news.gov.hk/rss/news/lawandorder_zh.xml" updateInterval="-1"/>
+      <outline title="&#x9999;&#x6E2F;&#x653F;&#x5E9C;&#x65B0;&#x805E;&#x7DB2; - &#x793E;&#x5340;&#x8207;&#x5065;&#x5EB7;" text="&#x9999;&#x6E2F;&#x653F;&#x5E9C;&#x65B0;&#x805E;&#x7DB2; - &#x793E;&#x5340;&#x8207;&#x5065;&#x5EB7;" description="&#x9999;&#x6E2F;&#x653F;&#x5E9C;&#x65B0;&#x805E;&#x7DB2; - &#x793E;&#x5340;&#x8207;&#x5065;&#x5EB7;" type="rss" id="uodaoid" sortColumn="time" viewMode="0" htmlUrl="http://www.news.gov.hk/tc/category/healthandcommunity/html/index.htm" xmlUrl="http://www.news.gov.hk/rss/news/healthandcommunity_zh.xml" updateInterval="-1"/>
+      <outline title="&#x9999;&#x6E2F;&#x653F;&#x5E9C;&#x65B0;&#x805E;&#x7DB2; - &#x4E3B;&#x8981;&#x65B0;&#x805E;" text="&#x9999;&#x6E2F;&#x653F;&#x5E9C;&#x65B0;&#x805E;&#x7DB2; - &#x4E3B;&#x8981;&#x65B0;&#x805E;" description="&#x9999;&#x6E2F;&#x653F;&#x5E9C;&#x65B0;&#x805E;&#x7DB2; - &#x4E3B;&#x8981;&#x65B0;&#x805E;" type="rss" id="eiakewg" sortColumn="time" viewMode="0" htmlUrl="http://www.news.gov.hk/tc/index.shtml" xmlUrl="http://www.news.gov.hk/rss/news/topstories_zh.xml" updateInterval="-1"/>
+    </outline>
+    <outline title="International" text="International" description="International" type="folder" id="xdrsxro" sortColumn="time" viewMode="0" expanded="true">
+      <outline title="Open Source" text="Open Source" description="Open Source" type="folder" id="xnoaefg" sortColumn="time" viewMode="0" expanded="true">
+        <outline title="art.gnome.org" text="art.gnome.org" description="art.gnome.org" type="rss" id="vbegsno" sortColumn="time" viewMode="0" htmlUrl="http://art.gnome.org" xmlUrl="http://art.gnome.org/backend.php" updateInterval="-1"/>
+        <outline title="Gnomefiles" text="Gnomefiles" description="Gnomefiles" type="rss" id="gwleiex" sortColumn="time" viewMode="0" htmlUrl="http://www.gnomefiles.org" xmlUrl="http://www.gnomefiles.org/files/gnomefiles.rdf" updateInterval="-1"/>
+        <outline title="GNOME Footnotes" text="GNOME Footnotes" description="GNOME Footnotes" type="rss" id="ygwfqeq" sortColumn="time" viewMode="0" htmlUrl="http://gnomedesktop.org" xmlUrl="http://www.gnomedesktop.org/backend.php" updateInterval="-1"/>
+        <outline title="GrokLaw" text="GrokLaw" description="GrokLaw" type="rss" id="dmpgmeg" sortColumn="time" viewMode="0" htmlUrl="http://www.groklaw.net" xmlUrl="http://www.groklaw.net/backend/GrokLaw.rdf" updateInterval="-1"/>
+        <outline title="Linux.com" text="Linux.com" description="Linux.com" type="rss" id="suhpnfi" sortColumn="time" viewMode="0" htmlUrl="http://www.linux.com/feature" xmlUrl="http://www.linux.com/index.rss" updateInterval="60"/>
+        <outline title="mozillaZine" text="mozillaZine" description="mozillaZine" type="rss" id="ifcdupb" sortColumn="time" viewMode="0" htmlUrl="http://www.mozillazine.org/" xmlUrl="http://www.mozillazine.org/contents.rdf" updateInterval="-1"/>
+        <outline title="Newsforge" text="Newsforge" description="Newsforge" type="rss" id="iuntxhs" sortColumn="time" viewMode="0" htmlUrl="http://www.linux.com/feature" xmlUrl="http://www.newsforge.com/newsforge.rss" updateInterval="60"/>
+        <outline title="Wikipedia - Recent changes [en]" text="Wikipedia - Recent changes [en]" description="Wikipedia - Recent changes [en]" type="rss" id="rhkqmfb" sortColumn="time" viewMode="0" htmlUrl="http://zh.wikipedia.org/wiki/Special:Recentchanges" xmlUrl="http://zh.wikipedia.org/w/index.php?title=Special:Recentchanges&amp;feed=rss" updateInterval="-1"/>
+        <outline title="Planet GNOME" text="Planet GNOME" description="Planet GNOME" type="pie" id="rudpgix" sortColumn="time" viewMode="0" htmlUrl="http://planet.gnome.org/" xmlUrl="http://planet.gnome.org/atom.xml" updateInterval="-1"/>
+        <outline title="Slashdot" text="Slashdot" description="Slashdot" type="rss" id="ymrrswn" sortColumn="time" viewMode="0" htmlUrl="http://slashdot.org/" xmlUrl="http://slashdot.org/slashdot.rss" updateInterval="60"/>
+        <outline title="Slashdot: Linux" text="Slashdot: Linux" description="Slashdot: Linux" type="rss" id="cvkbgtw" sortColumn="time" viewMode="0" htmlUrl="http://linux.slashdot.org/" xmlUrl="http://rss.slashdot.org/Slashdot/slashdotLinux" updateInterval="60"/>
+        <outline title="TuxMobil" text="TuxMobil" description="TuxMobil" type="rss" id="uowskkx" sortColumn="time" viewMode="0" htmlUrl="http://tuxmobil.org" xmlUrl="http://tuxmobil.org/tuxmobil_rss.rdf" updateInterval="1440"/>
+      </outline>
+    </outline>
+    <outline title="Unread" text="Unread" description="Unread" type="vfolder" id="dokxgrg" sortColumn="time" viewMode="0" matchType="any">
+      <outline type="rule" text="Read status" rule="unread" value="" additive="true"/>
+    </outline>
+    <outline title="Important" text="Important" description="Important" type="vfolder" id="rqpmfxi" sortColumn="time" viewMode="0" matchType="any">
+      <outline type="rule" text="Flag status" rule="flagged" value="" additive="true"/>
+    </outline>
+  </body>
+</opml>
