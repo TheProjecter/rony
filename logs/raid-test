@@ -1,0 +1,295 @@
+atom ~ # hdparm -Tt /dev/sd[a-e]
+
+/dev/sda:
+ Timing cached reads:   1050 MB in  2.00 seconds = 523.97 MB/sec
+ Timing buffered disk reads:  190 MB in  3.03 seconds =  62.72 MB/sec
+
+/dev/sdb:
+ Timing cached reads:   1016 MB in  2.00 seconds = 507.57 MB/sec
+ Timing buffered disk reads:  184 MB in  3.01 seconds =  61.13 MB/sec
+
+/dev/sdc:
+ Timing cached reads:   1054 MB in  2.00 seconds = 526.47 MB/sec
+ Timing buffered disk reads:  320 MB in  3.01 seconds = 106.44 MB/sec
+
+/dev/sdd:
+ Timing cached reads:   1090 MB in  2.00 seconds = 544.41 MB/sec
+ Timing buffered disk reads:  344 MB in  3.01 seconds = 114.40 MB/sec
+
+/dev/sde:
+ Timing cached reads:   1048 MB in  2.00 seconds = 523.67 MB/sec
+ Timing buffered disk reads:  224 MB in  3.01 seconds =  74.30 MB/sec
+
+
+
+
+
+
+
+atom sda1 # dd if=/dev/zero of=testraid-sda1 bs=4k count=1000000
+1000000+0 records in
+1000000+0 records out
+4096000000 bytes (4.1 GB) copied, 66.9173 s, 61.2 MB/s
+
+atom / # dd if=/dev/zero of=/testraid bs=4k count=1000000
+1000000+0 records in
+1000000+0 records out
+4096000000 bytes (4.1 GB) copied, 37.6493 s, 109 MB/s
+
+atom sdd3 # dd if=/dev/zero of=/testraid-sdd3 bs=4k count=1000000
+1000000+0 records in
+1000000+0 records out
+4096000000 bytes (4.1 GB) copied, 34.9656 s, 117 MB/s
+
+
+atom ~ # ll /mnt/sda1/testraid-sda1 /testraid-sdc2 /mnt/sdd3/testraid-sdd3 
+-rw-r--r-- 1 root root 4096000000 2009-07-28 15:20 /mnt/sda1/testraid-sda1
+-rw-r--r-- 1 root root 4096000000 2009-07-28 15:13 /mnt/sdd3/testraid-sdd3
+-rw-r--r-- 1 root root 4096000000 2009-07-28 15:09 /testraid-sdc2
+
+
+
+atom sda1 # losetup -f testraid-sda1 
+atom sda1 # losetup -f /testraid-sdc2 
+atom sda1 # losetup -f /mnt/sdd3/testraid-sdd3 
+
+atom sda1 # losetup -a
+/dev/loop0: [0801]:12 (/mnt/sda1/testraid-sda1)
+/dev/loop1: [0822]:15910 (/testraid-sdc2)
+/dev/loop2: [0833]:12 (/mnt/sdd3/testraid-sdd3)
+
+atom sda1 # dd if=/dev/loop0 of=/dev/null 
+8000000+0 records in
+8000000+0 records out
+4096000000 bytes (4.1 GB) copied, 78.1019 s, 52.4 MB/s
+atom sda1 # dd if=/dev/loop1 of=/dev/null 
+8000000+0 records in
+8000000+0 records out
+4096000000 bytes (4.1 GB) copied, 37.7071 s, 109 MB/s
+atom sda1 # dd if=/dev/loop2 of=/dev/null 
+8000000+0 records in
+8000000+0 records out
+4096000000 bytes (4.1 GB) copied, 37.793 s, 108 MB/s
+
+
+
+atom sda1 # mdadm -v --create /dev/md1 --chunk=256 --level=10 --layout=f2 --raid-devices=3 /dev/loop0 /dev/loop1 /dev/loop2
+mdadm: size set to 3999744K
+mdadm: array /dev/md1 started.
+
+atom sda1 # cat /proc/mdstat 
+Personalities : [raid10] 
+md1 : active raid10 loop2[2] loop1[1] loop0[0]
+      5999616 blocks 256K chunks 2 far-copies [3/3] [UUU]
+      [=>...................]  resync =  7.3% (438720/5999616) finish=1.0min speed=87744K/sec
+      
+unused devices: <none>
+
+
+atom ~ # cat /sys/block/md1/md/sync_speed_m*
+200000 (system)
+1000 (system)
+
+
+atom ~ # fdisk -l /dev/md1 
+
+Disk /dev/md1: 6143 MB, 6143606784 bytes
+2 heads, 4 sectors/track, 1499904 cylinders
+Units = cylinders of 8 * 512 = 4096 bytes
+Disk identifier: 0xf82be604
+
+Disk /dev/md1 doesn't contain a valid partition table
+
+
+atom ~ # hdparm -tT /dev/md1 
+
+/dev/md1:
+ Timing cached reads:   1084 MB in  2.00 seconds = 542.17 MB/sec
+ Timing buffered disk reads:  402 MB in  3.00 seconds = 133.97 MB/sec
+
+
+atom ~ # dd if=/dev/md1 of=/dev/null bs=4k
+1499904+0 records in
+1499904+0 records out
+6143606784 bytes (6.1 GB) copied, 38.2107 s, 161 MB/s
+
+atom ~ # dd if=/dev/zero of=/dev/md1 bs=4k count=1000000
+1000000+0 records in
+1000000+0 records out
+4096000000 bytes (4.1 GB) copied, 54.1972 s, 75.6 MB/s
+
+
+atom ~ # cryptsetup create r10 /dev/md1 
+Enter passphrase: 
+atom ~ # ll /dev/mapper/r10 
+brw-rw---- 1 root disk 254, 0 2009-07-28 15:46 /dev/mapper/r10
+atom ~ # dd if=/dev/mapper/r10 of=/dev/null bs=4k
+1499904+0 records in
+1499904+0 records out
+6143606784 bytes (6.1 GB) copied, 242.174 s, 25.4 MB/s
+atom ~ # dd if=/dev/zero of=/dev/mapper/r10 bs=4k count=250000
+250000+0 records in
+250000+0 records out
+1024000000 bytes (1.0 GB) copied, 45.4306 s, 22.5 MB/s
+
+atom ~ # cryptsetup remove r10 && mdadm -S /dev/md1 
+mdadm: stopped /dev/md1
+
+
+atom ~ # mdadm --zero-superblock
+
+atom ~ # mdadm -v --create /dev/md1 --chunk=256 --level=10 -p f2 -n 3 missing /dev/loop0 /dev/loop1
+mdadm: size set to 3999744K
+mdadm: array /dev/md1 started.
+
+atom ~ # cat /proc/mdstat 
+Personalities : [raid10] 
+md1 : active raid10 loop1[2] loop0[1]
+      5999616 blocks 256K chunks 2 far-copies [3/2] [_UU]
+      
+unused devices: <none>
+
+atom ~ # mdadm /dev/md1 --add /dev/loop2 
+mdadm: added /dev/loop2
+
+atom ~ # cat /proc/mdstat 
+Personalities : [raid10] 
+md1 : active raid10 loop2[3] loop1[2] loop0[1]
+      5999616 blocks 256K chunks 2 far-copies [3/2] [_UU]
+      [>....................]  recovery =  2.3% (94144/3999744) finish=1.3min speed=47072K/sec
+      
+unused devices: <none>
+
+
+
+atom ~ # blkid /dev/md1 
+/dev/md1: UUID="eeddaa3f-ca00-404e-b603-cad4118377ca" TYPE="ext4" 
+atom ~ # fsck.ext4 /dev/md1 
+e2fsck 1.41.8 (11-July-2009)
+/dev/md1: clean, 11/375360 files, 59270/1499904 blocks
+atom ~ # fsck.ext4 /dev/md1 -f
+e2fsck 1.41.8 (11-July-2009)
+Pass 1: Checking inodes, blocks, and sizes
+Pass 2: Checking directory structure
+Pass 3: Checking directory connectivity
+Pass 4: Checking reference counts
+Pass 5: Checking group summary information
+/dev/md1: 11/375360 files (0.0% non-contiguous), 59270/1499904 blocks
+
+
+FAIL/remove slowest drive
+mdadm: set /dev/loop0 faulty in /dev/md1
+atom ~ # cat /proc/mdstat 
+Personalities : [raid10] 
+md1 : active raid10 loop2[0] loop1[2] loop0[3](F)
+      5999616 blocks 256K chunks 2 far-copies [3/2] [U_U]
+      
+unused devices: <none>
+
+atom ~ # hdparm -tT /dev/md1 
+
+/dev/md1:
+ Timing cached reads:   1096 MB in  2.00 seconds = 548.00 MB/sec
+ Timing buffered disk reads:  362 MB in  3.01 seconds = 120.37 MB/sec
+
+
+
+
+DM-CRYPT
+
+
+atom ~ # losetup -a
+/dev/loop0: [0801]:12 (/mnt/sda1/testraid-sda1)
+/dev/loop1: [0822]:15910 (/testraid-sdc2)
+/dev/loop2: [0833]:12 (/mnt/sdd3/testraid-sdd3)
+atom ~ # cryptsetup create p1 /dev/loop0
+Enter passphrase: 
+atom ~ # cryptsetup create p2 /dev/loop1
+Enter passphrase: 
+atom ~ # cryptsetup create p3 /dev/loop2
+Enter passphrase: 
+
+atom ~ # mdadm -v --create /dev/md1 --chunk=256 -l 10 --layout=f2 -n 3 /dev/mapper/p1 /dev/mapper/p2 /dev/mapper/p3
+
+
+atom ~ # dd if=/dev/md1 of=/dev/zero bs=4k
+1499904+0 records in
+1499904+0 records out
+6143606784 bytes (6.1 GB) copied, 123.152 s, 49.9 MB/s
+atom ~ # dd if=/dev/zero of=/dev/md1 bs=4k count=250000
+250000+0 records in
+250000+0 records out
+1024000000 bytes (1.0 GB) copied, 46.8618 s, 21.9 MB/s
+
+
+atom ~ # mdadm /dev/md1 -f /dev/mapper/p1 
+mdadm: set /dev/mapper/p1 faulty in /dev/md1
+
+atom ~ # cat /proc/mdstat 
+Personalities : [raid10] 
+md1 : active raid10 dm-2[2] dm-1[1] dm-0[3](F)
+      5999616 blocks 256K chunks 2 far-copies [3/2] [_UU]
+      
+unused devices: <none>
+atom ~ # dd if=/dev/md1 of=/dev/zero bs=4k count=250000
+250000+0 records in
+250000+0 records out
+1024000000 bytes (1.0 GB) copied, 29.7032 s, 34.5 MB/s
+atom ~ # dd if=/dev/zero of=/dev/md1 bs=4k count=250000
+250000+0 records in
+250000+0 records out
+1024000000 bytes (1.0 GB) copied, 35.8791 s, 28.5 MB/s
+atom ~ # 
+
+
+
+
+
+
+
+mdadm -v --create /dev/md0 --auto=md -n 2 --chunk=256 -l 10 -p fs /dev/sdc4 /dev/sdd1 --assume-clean
+mkfs.ext4 -E stripe-width=32 /dev/md0
+
+atom floppy # dd if=/dev/zero of=test4g bs=1M count=4000
+4000+0 records in
+4000+0 records out
+4194304000 bytes (4.2 GB) copied, 45.3383 s, 92.5 MB/s
+atom floppy # dd if=/dev/md0 of=/dev/null bs=1M count=1000
+1000+0 records in
+1000+0 records out
+1048576000 bytes (1.0 GB) copied, 5.22257 s, 201 MB/s
+
+
+mkfs.ext4 -E stride=256,stripe-width=512 /dev/md0
+
+atom mnt # dd if=/dev/zero of=/mnt/raid10f2/test4g bs=1M count=4000
+4000+0 records in
+4000+0 records out
+4194304000 bytes (4.2 GB) copied, 45.2535 s, 92.7 MB/s
+atom mnt # sync
+atom mnt # dd if=/mnt/raid10f2/test4g of=/dev/null 
+8192000+0 records in
+8192000+0 records out
+4194304000 bytes (4.2 GB) copied, 26.9448 s, 156 MB/s
+
+
+chunksize=256, 
+stride=256/4, stripe-width=stride*disks
+mkfs.ext4 -E stride=64,stripe-width=128 /dev/md0
+or
+tune2fs -E stride=64,stripe-width=128 /dev/md0
+atom mnt # mount /dev/md0 /mnt/raid10f2/ -o noatime,nodiratime,commit=120
+atom mnt # dd if=/dev/zero of=/mnt/raid10f2/test4g bs=1M count=4000
+4000+0 records in
+4000+0 records out
+4194304000 bytes (4.2 GB) copied, 45.3853 s, 92.4 MB/s
+atom mnt # sync
+atom mnt # dd if=/mnt/raid10f2/test4g of=/dev/null 
+8192000+0 records in
+8192000+0 records out
+4194304000 bytes (4.2 GB) copied, 26.1853 s, 160 MB/s
+atom mnt # dd if=/mnt/raid10f2/test4g of=/dev/null bs=1M 
+4000+0 records in
+4000+0 records out
+4194304000 bytes (4.2 GB) copied, 20.305 s, 207 MB/s
+
