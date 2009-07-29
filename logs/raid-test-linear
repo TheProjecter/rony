@@ -1,0 +1,451 @@
+atom ~ # mdadm -v -C /dev/md1 -l linear --chunk=128 -n 2 /dev/sda /dev/sdb
+mdadm: array /dev/md1 started.
+
+atom ~ # cat /proc/mdstat 
+Personalities : [linear] [raid10] 
+md1 : active linear sdb[1] sda[0]
+      490234624 blocks 128k rounding
+      
+md0 : active raid10 sdd1[1] sdc4[0]
+      625131520 blocks 256K chunks 2 far-copies [2/2] [UU]
+      
+unused devices: <none>
+
+atom ~ # hdparm -tT /dev/md*
+
+/dev/md0:
+ Timing cached reads:   1112 MB in  2.00 seconds = 555.41 MB/sec
+ Timing buffered disk reads:  586 MB in  3.00 seconds = 195.14 MB/sec
+
+/dev/md1:
+ Timing cached reads:   1100 MB in  2.00 seconds = 549.79 MB/sec
+ Timing buffered disk reads:  184 MB in  3.01 seconds =  61.03 MB/sec
+
+atom ~ # mdadm -v -C /dev/md2 -l 10 -p f2 --chunk=256 -n 2 /dev/md1 /dev/sde --assume-clean
+mdadm: array /dev/md2 started.
+
+atom ~ # cat /proc/mdstat 
+Personalities : [linear] [raid10] 
+md2 : active raid10 sde[1] md1[0]
+      488386048 blocks 256K chunks 2 far-copies [2/2] [UU]
+      
+md1 : active linear sdb[1] sda[0]
+      490234624 blocks 128k rounding
+      
+md0 : active raid10 sdd1[1] sdc4[0]
+      625131520 blocks 256K chunks 2 far-copies [2/2] [UU]
+      
+unused devices: <none>
+
+atom ~ # hdparm -tT /dev/sda /dev/sdb /dev/md1 /dev/sde /dev/md2
+
+/dev/sda:
+ Timing cached reads:   1096 MB in  2.00 seconds = 547.58 MB/sec
+ Timing buffered disk reads:  184 MB in  3.01 seconds =  61.06 MB/sec
+
+/dev/sdb:
+ Timing cached reads:   1082 MB in  2.00 seconds = 540.14 MB/sec
+ Timing buffered disk reads:  188 MB in  3.01 seconds =  62.38 MB/sec
+
+/dev/md1:
+ Timing cached reads:   1094 MB in  2.00 seconds = 546.61 MB/sec
+ Timing buffered disk reads:  184 MB in  3.03 seconds =  60.73 MB/sec
+
+/dev/sde:
+ Timing cached reads:   1092 MB in  2.00 seconds = 545.42 MB/sec
+ Timing buffered disk reads:  226 MB in  3.02 seconds =  74.79 MB/sec
+
+/dev/md2:
+ Timing cached reads:   1108 MB in  2.00 seconds = 553.32 MB/sec
+ Timing buffered disk reads:  350 MB in  3.01 seconds = 116.29 MB/sec
+
+atom ~ # dd if=/dev/zero of=/dev/md2 bs=1M count=4000
+4000+0 records in
+4000+0 records out
+4194304000 bytes (4.2 GB) copied, 76.4428 s, 54.9 MB/s
+atom ~ # sync
+atom ~ # dd if=/dev/md2 of=/dev/null bs=1M count=4000
+4000+0 records in
+4000+0 records out
+4194304000 bytes (4.2 GB) copied, 32.6046 s, 129 MB/s
+
+atom ~ # cryptsetup create md2crypt /dev/md2 
+Enter passphrase: 
+atom ~ # dd if=/dev/zero of=/dev/mapper/md2crypt bs=1M count=4000
+4000+0 records in
+4000+0 records out
+4194304000 bytes (4.2 GB) copied, 163.011 s, 25.7 MB/s
+atom ~ # sync
+atom ~ # dd if=/dev/mapper/md2crypt of=/dev/null bs=1M count=4000
+4000+0 records in
+4000+0 records out
+4194304000 bytes (4.2 GB) copied, 165.802 s, 25.3 MB/s
+
+atom ~ # cryptsetup remove md2crypt
+atom ~ # mdadm -S /dev/md2 
+mdadm: stopped /dev/md2
+atom ~ # cryptsetup create md2a /dev/md1 
+Enter passphrase: 
+atom ~ # cryptsetup create md2b /dev/sde 
+Enter passphrase: 
+atom ~ # mdadm -v -C /dev/md2 -l 10 -p f2 --chunk=256 -n 2 /dev/mapper/md2a /dev/mapper/md2b --assume-clean
+mdadm: size set to 488386304K
+mdadm: array /dev/md2 started.
+atom ~ # cat /proc/mdstat 
+Personalities : [linear] [raid10] 
+md2 : active raid10 dm-1[1] dm-0[0]
+      488386048 blocks 256K chunks 2 far-copies [2/2] [UU]
+      
+md1 : active linear sdb[1] sda[0]
+      490234624 blocks 128k rounding
+      
+md0 : active raid10 sdd1[1] sdc4[0]
+      625131520 blocks 256K chunks 2 far-copies [2/2] [UU]
+      
+unused devices: <none>
+
+
+
+atom ~ # hdparm -tT /dev/mapper/md2a /dev/mapper/md2b /dev/md2
+
+/dev/mapper/md2a:
+ Timing cached reads:   1028 MB in  2.00 seconds = 514.01 MB/sec
+ Timing buffered disk reads:   72 MB in  3.01 seconds =  23.96 MB/sec
+
+/dev/mapper/md2b:
+ Timing cached reads:   1046 MB in  2.00 seconds = 522.91 MB/sec
+ Timing buffered disk reads:   74 MB in  3.05 seconds =  24.26 MB/sec
+
+/dev/md2:
+ Timing cached reads:   1018 MB in  2.00 seconds = 508.52 MB/sec
+ Timing buffered disk reads:  132 MB in  3.00 seconds =  43.95 MB/sec
+
+atom ~ # dd if=/dev/zero of=/dev/md2 bs=1M count=4000
+4000+0 records in
+4000+0 records out
+4194304000 bytes (4.2 GB) copied, 196.937 s, 21.3 MB/s
+atom ~ # dd if=/dev/md2 of=/dev/null bs=1M count=4000
+4000+0 records in
+4000+0 records out
+4194304000 bytes (4.2 GB) copied, 90.7872 s, 46.2 MB/s
+
+
+
+RAID10, (one LINEAR), dm x3
+
+atom ~ # cryptsetup create md2a1 /dev/sda -y
+Enter passphrase: 
+Verify passphrase: 
+atom ~ # cryptsetup create md2a2 /dev/sdb -y
+Enter passphrase: 
+Verify passphrase: 
+atom ~ # cryptsetup create md2b /dev/sde -y
+Enter passphrase: 
+Verify passphrase: 
+
+atom ~ # mdadm -v -C /dev/md1 -l linear --chunk=128 -n 2 /dev/mapper/md2a1 /dev/mapper/md2a2
+mdadm: array /dev/md1 started.
+
+atom ~ # cat /proc/mdstat 
+Personalities : [linear] [raid10] 
+md1 : active linear dm-0[1] dm-1[0]
+      490234624 blocks 128k rounding
+      
+md0 : active raid10 sdd1[1] sdc4[0]
+      625131520 blocks 256K chunks 2 far-copies [2/2] [UU]
+      
+unused devices: <none>
+
+
+atom ~ # mdadm -v -C /dev/md2 -l 10 -p f2 --chunk=256 -n 2 /dev/md1 /dev/mapper/md2b --assume-clean
+mdadm: size set to 488386304K
+mdadm: array /dev/md2 started.
+atom ~ # cat /proc/mdstat 
+Personalities : [linear] [raid10] 
+md2 : active raid10 dm-2[1] md1[0]
+      488386048 blocks 256K chunks 2 far-copies [2/2] [UU]
+      
+md1 : active linear dm-0[1] dm-1[0]
+      490234624 blocks 128k rounding
+      
+md0 : active raid10 sdd1[1] sdc4[0]
+      625131520 blocks 256K chunks 2 far-copies [2/2] [UU]
+      
+unused devices: <none>
+
+atom ~ # hdparm -tT /dev/md1 /dev/md2 
+
+/dev/md1:
+ Timing cached reads:   1030 MB in  2.00 seconds = 515.11 MB/sec
+ Timing buffered disk reads:   72 MB in  3.04 seconds =  23.71 MB/sec
+
+/dev/md2:
+ Timing cached reads:   1056 MB in  2.00 seconds = 527.89 MB/sec
+ Timing buffered disk reads:  130 MB in  3.02 seconds =  43.08 MB/sec
+
+atom ~ # dd if=/dev/zero of=/dev/md2 bs=1M count=4000
+4000+0 records in
+4000+0 records out
+4194304000 bytes (4.2 GB) copied, 192.353 s, 21.8 MB/s
+atom ~ # dd if=/dev/md2 of=/dev/null bs=1M count=4000
+4000+0 records in
+4000+0 records out
+4194304000 bytes (4.2 GB) copied, 89.6056 s, 46.8 MB/s
+
+
+TEST --auto=p1
+
+atom ~ # mdadm -v -C /dev/md2 -ap1 -l 10 -p f2 --chunk=256 -n 2 /dev/md1 /dev/mapper/md2b --assume-clean
+mdadm: array /dev/md2 started.
+
+
+TEST with RAID0 + RAID10, for speed
+
+atom ~ # mdadm -v -C /dev/md1 -l raid0 --chunk=128 -n 2 /dev/mapper/md2a1 /dev/mapper/md2a2
+mdadm: array /dev/md1 started.
+
+atom ~ # mdadm -v -C /dev/md2 -l raid10 -p f2 --chunk=256 -n 2 /dev/md1 /dev/mapper/md2b --assume-clean -ayes
+mdadm: size set to 488386304K
+mdadm: array /dev/md2 started.
+
+atom ~ # cat /proc/mdstat 
+Personalities : [linear] [raid10] [raid0] 
+md2 : active raid10 dm-2[1] md1[0]
+      488386048 blocks 256K chunks 2 far-copies [2/2] [UU]
+      
+md1 : active raid0 dm-0[1] dm-1[0]
+      490234624 blocks 128k chunks
+      
+md0 : active raid10 sdd1[1] sdc4[0]
+      625131520 blocks 256K chunks 2 far-copies [2/2] [UU]
+      
+unused devices: <none>
+
+atom ~ # dd if=/dev/zero of=/dev/md2 bs=1M count=4000
+4000+0 records in
+4000+0 records out
+4194304000 bytes (4.2 GB) copied, 189.831 s, 22.1 MB/s
+atom ~ # dd if=/dev/md2 of=/dev/null bs=1M count=4000
+4000+0 records in
+4000+0 records out
+4194304000 bytes (4.2 GB) copied, 96.0253 s, 43.7 MB/s
+
+TEST - smaller chunksize for dm-crypt speed ???
+
+atom ~ # mdadm -S /dev/md2 /dev/md1
+mdadm: stopped /dev/md2
+mdadm: stopped /dev/md1
+
+atom ~ # mdadm -v -C /dev/md1 -l raid0 -n 2 /dev/mapper/md2a1 /dev/mapper/md2a2
+mdadm: chunk size defaults to 64K
+mdadm: array /dev/md1 started.
+
+atom ~ # mdadm -v -C /dev/md2 -l raid10 -p f2 --chunk=64 -n 2 /dev/md1 /dev/mapper/md2b --assume-clean -ayes
+mdadm: size set to 488386496K
+mdadm: array /dev/md2 started.
+
+atom ~ # cat /proc/mdstat 
+Personalities : [linear] [raid10] [raid0] 
+md2 : active raid10 dm-2[1] md1[0]
+      488386432 blocks 64K chunks 2 far-copies [2/2] [UU]
+      
+md1 : active raid0 dm-0[1] dm-1[0]
+      490234624 blocks 64k chunks
+      
+md0 : active raid10 sdd1[1] sdc4[0]
+      625131520 blocks 256K chunks 2 far-copies [2/2] [UU]
+      
+unused devices: <none>
+
+atom ~ # dd if=/dev/zero of=/dev/md2 bs=1M count=4000
+4000+0 records in
+4000+0 records out
+4194304000 bytes (4.2 GB) copied, 190.913 s, 22.0 MB/s
+atom ~ # sync
+atom ~ # dd if=/dev/md2 of=/dev/null bs=1M count=4000
+4000+0 records in
+4000+0 records out
+4194304000 bytes (4.2 GB) copied, 99.4946 s, 42.2 MB/s
+
+atom ~ # hdparm -tT /dev/md1 /dev/md2
+
+/dev/md1:
+ Timing cached reads:   1046 MB in  2.00 seconds = 522.63 MB/sec
+ Timing buffered disk reads:  132 MB in  3.01 seconds =  43.89 MB/sec
+
+/dev/md2:
+ Timing cached reads:   1074 MB in  2.00 seconds = 536.79 MB/sec
+ Timing buffered disk reads:  114 MB in  3.03 seconds =  37.62 MB/sec
+
+
+GIVEUP -- backup to basic, RAID10f2 ontop LINEAR
+
+atom ~ # mdadm -v -C /dev/md1 -l linear --chunk=128 -n 2 /dev/mapper/md2a1 /dev/mapper/md2a2 && mdadm -v -C /dev/md2 -l raid10 -p f2 --chunk=256 -n 2 /dev/md1 /dev/mapper/md2b --assume-clean
+mdadm: array /dev/md1 started.
+mdadm: size set to 488386304K
+mdadm: array /dev/md2 started.
+
+atom ~ # cat /proc/mdstat 
+Personalities : [linear] [raid10] [raid0] 
+md2 : active raid10 dm-2[1] md1[0]
+      488386048 blocks 256K chunks 2 far-copies [2/2] [UU]
+      
+md1 : active linear dm-0[1] dm-1[0]
+      490234624 blocks 128k rounding
+      
+md0 : active raid10 sdd1[1] sdc4[0]
+      625131520 blocks 256K chunks 2 far-copies [2/2] [UU]
+      
+unused devices: <none>
+
+atom ~ # hdparm -tT /dev/md1 /dev/md2
+
+/dev/md1:
+ Timing cached reads:   1034 MB in  2.00 seconds = 516.23 MB/sec
+ Timing buffered disk reads:   76 MB in  3.05 seconds =  24.89 MB/sec
+
+/dev/md2:
+ Timing cached reads:   1054 MB in  2.00 seconds = 527.21 MB/sec
+ Timing buffered disk reads:  130 MB in  3.00 seconds =  43.29 MB/sec
+
+NO, RAID10 ontop RAID0 is better to have to devices at 40MB/s
+
+atom ~ # mdadm -v -C /dev/md1 -l raid0 --chunk=128 -n 2 /dev/mapper/md2a1 /dev/mapper/md2a2 && mdadm -v -C /dev/md2 -l raid10 -p f2 --chunk=256 -n 2 /dev/md1 /dev/mapper/md2b --assume-clean && cat /proc/mdstat 
+mdadm: array /dev/md1 started.
+mdadm: size set to 488386304K
+mdadm: array /dev/md2 started.
+Personalities : [linear] [raid10] [raid0] 
+md2 : active raid10 dm-2[1] md1[0]
+      488386048 blocks 256K chunks 2 far-copies [2/2] [UU]
+      
+md1 : active raid0 dm-0[1] dm-1[0]
+      490234624 blocks 128k chunks
+      
+md0 : active raid10 sdd1[1] sdc4[0]
+      625131520 blocks 256K chunks 2 far-copies [2/2] [UU]
+      
+unused devices: <none>
+
+atom ~ # hdparm -tT /dev/md1 /dev/md2
+
+/dev/md1:
+ Timing cached reads:   1056 MB in  2.00 seconds = 528.07 MB/sec
+ Timing buffered disk reads:  140 MB in  3.03 seconds =  46.28 MB/sec
+
+/dev/md2:
+ Timing cached reads:   1028 MB in  2.00 seconds = 514.08 MB/sec
+ Timing buffered disk reads:  116 MB in  3.02 seconds =  38.40 MB/sec
+
+
+SPLIT INTO 4 devices
+
+atom ~ # cryptsetup create d1 /dev/sda
+Enter passphrase: 
+atom ~ # cryptsetup create d2 /dev/sdb
+Enter passphrase: 
+atom ~ # cryptsetup create d3 /dev/sde -b 488386584
+Enter passphrase: 
+atom ~ # cryptsetup create d4 /dev/sde -o 488386584
+Enter passphrase: 
+atom ~ # dmsetup table
+d4: 0 488386584 crypt aes-cbc-plain 0000000000000000000000000000000000000000000000000000000000000000 0 8:64 488386584
+d3: 0 488386584 crypt aes-cbc-plain 0000000000000000000000000000000000000000000000000000000000000000 0 8:64 0
+d2: 0 490234752 crypt aes-cbc-plain 0000000000000000000000000000000000000000000000000000000000000000 0 8:16 0
+d1: 0 490234752 crypt aes-cbc-plain 0000000000000000000000000000000000000000000000000000000000000000 0 8:0 0
+
+
+atom ~ # mdadm -v -C /dev/md4 -l raid0 --chunk=128 -n 2 /dev/mapper/d1 /dev/mapper/d2 && mdadm -v -C /dev/md5 -l raid0 --chunk=128 -n 2 /dev/mapper/d3 /dev/mapper/d4 && mdadm -v -C /dev/md6 -l raid10 -p f2 --chunk=256 -n 2 /dev/md4 /dev/md5 --assume-clean && cat /proc/mdstat
+mdadm: array /dev/md4 started.
+mdadm: array /dev/md5 started.
+mdadm: size set to 488386048K
+mdadm: array /dev/md6 started.
+Personalities : [linear] [raid10] [raid0] 
+md6 : active raid10 md5[1] md4[0]
+      488386048 blocks 256K chunks 2 far-copies [2/2] [UU]
+      
+md5 : active raid0 dm-3[1] dm-2[0]
+      488386304 blocks 128k chunks
+      
+md4 : active raid0 dm-1[1] dm-0[0]
+      490234624 blocks 128k chunks
+      
+md0 : active raid10 sdd1[1] sdc4[0]
+      625131520 blocks 256K chunks 2 far-copies [2/2] [UU]
+      
+unused devices: <none>
+
+atom ~ # hdparm -tT /dev/md[4-6]
+
+/dev/md4:
+ Timing cached reads:   1050 MB in  2.00 seconds = 524.84 MB/sec
+ Timing buffered disk reads:  136 MB in  3.01 seconds =  45.14 MB/sec
+
+/dev/md5:
+ Timing cached reads:   1076 MB in  2.00 seconds = 537.52 MB/sec
+ Timing buffered disk reads:   52 MB in  3.14 seconds =  16.56 MB/sec
+
+/dev/md6:
+ Timing cached reads:   1082 MB in  2.00 seconds = 540.61 MB/sec
+ Timing buffered disk reads:  104 MB in  3.02 seconds =  34.40 MB/sec
+atom ~ # dd if=/dev/md4 of=/dev/null bs=1M count=1000
+1000+0 records in
+1000+0 records out
+1048576000 bytes (1.0 GB) copied, 21.2077 s, 49.4 MB/s
+atom ~ # dd if=/dev/md5 of=/dev/null bs=1M count=1000
+1000+0 records in
+1000+0 records out
+1048576000 bytes (1.0 GB) copied, 66.542 s, 15.8 MB/s
+
+REARRANGE THE devices
+=====================
+
+atom ~ # mdadm -v -C /dev/md4 -l raid0 --chunk=128 -n 2 /dev/mapper/d1 /dev/mapper/d3 && mdadm -v -C /dev/md5 -l raid0 --chunk=128 -n 2 /dev/mapper/d2 /dev/mapper/d4 && mdadm -v -C /dev/md6 -l raid10 -p f2 --chunk=256 -n 2 /dev/md4 /dev/md5 --assume-clean && cat /proc/mdstat
+mdadm: array /dev/md4 started.
+mdadm: array /dev/md5 started.
+mdadm: size set to 489310208K
+mdadm: array /dev/md6 started.
+Personalities : [linear] [raid10] [raid0] 
+md6 : active raid10 md5[1] md4[0]
+      489310208 blocks 256K chunks 2 far-copies [2/2] [UU]
+      
+md5 : active raid0 dm-3[1] dm-1[0]
+      489310464 blocks 128k chunks
+      
+md4 : active raid0 dm-2[1] dm-0[0]
+      489310464 blocks 128k chunks
+      
+md0 : active raid10 sdd1[1] sdc4[0]
+      625131520 blocks 256K chunks 2 far-copies [2/2] [UU]
+      
+unused devices: <none>
+
+atom ~ # hdparm -tT /dev/md[4-6]
+
+/dev/md4:
+ Timing cached reads:   1068 MB in  2.00 seconds = 533.42 MB/sec
+ Timing buffered disk reads:  138 MB in  3.02 seconds =  45.75 MB/sec
+
+/dev/md5:
+ Timing cached reads:   1060 MB in  2.00 seconds = 529.56 MB/sec
+ Timing buffered disk reads:  142 MB in  3.03 seconds =  46.92 MB/sec
+
+/dev/md6:
+ Timing cached reads:   1070 MB in  2.00 seconds = 534.85 MB/sec
+ Timing buffered disk reads:   96 MB in  3.07 seconds =  31.27 MB/sec
+atom ~ # dd if=/dev/md4 of=/dev/null bs=1M count=1000
+1000+0 records in
+1000+0 records out
+1048576000 bytes (1.0 GB) copied, 21.5726 s, 48.6 MB/s
+atom ~ # dd if=/dev/md5 of=/dev/null bs=1M count=1000
+1000+0 records in
+1000+0 records out
+1048576000 bytes (1.0 GB) copied, 21.452 s, 48.9 MB/s
+atom ~ # dd if=/dev/md6 of=/dev/null bs=1M count=1000
+1000+0 records in
+1000+0 records out
+1048576000 bytes (1.0 GB) copied, 29.4315 s, 35.6 MB/s
+atom ~ # dd if=/dev/zero of=/dev/md6 bs=1M count=1000
+1000+0 records in
+1000+0 records out
+1048576000 bytes (1.0 GB) copied, 42.0382 s, 24.9 MB/s
+
