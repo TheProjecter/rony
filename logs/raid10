@@ -1,0 +1,57 @@
+atom ~ # lsscsi
+[0:0:0:0]    disk    ATA      Maxtor 6L250R0   BAH4  /dev/sda
+[0:0:1:0]    disk    ATA      Maxtor 6L250R0   BAH4  /dev/sdb
+[2:0:0:0]    disk    ATA      Hitachi HDT72101 ST6O  /dev/sdc
+[3:0:0:0]    disk    ATA      WDC WD6400AAKS-0 07.0  /dev/sdd
+[4:0:0:0]    disk    ATA      WDC WD5001ABYS-0 59.0  /dev/sde
+[5:0:0:0]    disk    ATA      ST3320620AS      3.AA  /dev/sdf
+[6:0:0:0]    cd/dvd  LITE-ON  DVDRW SHW-160P6S PS08  /dev/sr0
+
+atom ~ # hddtemp /dev/sd[a-f]
+/dev/sda: Maxtor 6L250R0: 31°C
+/dev/sdb: Maxtor 6L250R0: 31°C
+/dev/sdc: Hitachi HDT721010SLA360: 35°C
+/dev/sdd: WDC WD6400AAKS-00H2B0: 35°C
+/dev/sde: WDC WD5001ABYS-01YNA0: 34°C
+/dev/sdf: ST3320620AS: 41°C
+
+atom ~ # hdparm -Tt /dev/sd[a-f]
+
+/dev/sda:
+ Timing cached reads:   1178 MB in  2.00 seconds = 589.16 MB/sec
+ Timing buffered disk reads:  178 MB in  3.03 seconds =  58.78 MB/sec
+
+/dev/sdb:
+ Timing cached reads:   1178 MB in  2.00 seconds = 589.17 MB/sec
+ Timing buffered disk reads:  184 MB in  3.01 seconds =  61.06 MB/sec
+
+/dev/sdc:
+ Timing cached reads:   1232 MB in  2.00 seconds = 615.76 MB/sec
+ Timing buffered disk reads:  336 MB in  3.00 seconds = 111.90 MB/sec
+
+/dev/sdd:
+ Timing cached reads:   1172 MB in  2.00 seconds = 586.07 MB/sec
+ Timing buffered disk reads:  348 MB in  3.02 seconds = 115.37 MB/sec
+
+/dev/sde:
+ Timing cached reads:   1168 MB in  2.00 seconds = 584.03 MB/sec
+ Timing buffered disk reads:  224 MB in  3.01 seconds =  74.49 MB/sec
+
+/dev/sdf:
+ Timing cached reads:   1168 MB in  2.00 seconds = 583.88 MB/sec
+ Timing buffered disk reads:  226 MB in  3.03 seconds =  74.66 MB/sec
+
+atom ~ # hdparm -tT /dev/md[0-2]
+
+/dev/md0:
+ Timing cached reads:   1150 MB in  2.00 seconds = 574.83 MB/sec
+ Timing buffered disk reads:  572 MB in  3.00 seconds = 190.38 MB/sec
+
+/dev/md1:
+ Timing cached reads:   1108 MB in  2.00 seconds = 553.52 MB/sec
+ Timing buffered disk reads:  140 MB in  3.01 seconds =  46.58 MB/sec
+
+/dev/md2:
+ Timing cached reads:   1104 MB in  2.00 seconds = 551.40 MB/sec
+ Timing buffered disk reads:  136 MB in  3.00 seconds =  45.27 MB/sec
+
