@@ -1,0 +1,14 @@
+md: raid10 personality registered for level 10
+sdhci: Secure Digital Host Controller Interface driver
+sdhci: Copyright(c) Pierre Ossman
+sdhci-pci 0000:15:00.2: SDHCI controller found [1180:0822] (rev 21)
+sdhci-pci 0000:15:00.2: PCI INT C -> GSI 18 (level, low) -> IRQ 18
+sdhci-pci 0000:15:00.2: Will use DMA mode even though HW doesn't fully claim to support it.
+sdhci-pci 0000:15:00.2: setting latency timer to 64
+Registered led device: mmc0::
+mmc0: SDHCI controller on PCI [0000:15:00.2] using DMA
+mmc0: new high speed SD card at address b368
+mmcblk0: mmc0:b368 SD    1.91 GiB 
+ mmcblk0: p1
+
+
