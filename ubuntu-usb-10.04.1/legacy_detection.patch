@@ -1,0 +1,98 @@
+diff -pruN grub2-1.97~beta4.orig/util/grub-mkconfig.in grub2-1.97~beta4/util/grub-mkconfig.in
+--- grub2-1.97~beta4.orig/util/grub-mkconfig.in	2009-09-10 19:04:43.000000000 +0000
++++ grub2-1.97~beta4/util/grub-mkconfig.in	2009-12-05 21:42:51.908543561 +0000
+@@ -119,8 +119,9 @@ if test -e ${grub_prefix}/device.map ; t
+ fi
+ 
+ # Device containing our userland.  Typically used for root= parameter.
+-GRUB_DEVICE="`${grub_probe} --target=device /`"
+-GRUB_DEVICE_UUID="`${grub_probe} --device ${GRUB_DEVICE} --target=fs_uuid 2> /dev/null`" || true
++GRUB_DEVICE="`${grub_probe} --target=device /`" || GRUB_DEVICE="`legacy_find_root_device`"
++GRUB_DEVICE_UUID="`${grub_probe} --device ${GRUB_DEVICE} --target=fs_uuid 2> /dev/null`" || \
++    GRUB_DEVICE_UUID="`legacy_convert_to_uuid ${GRUB_DEVICE}`"
+ 
+ # Device containing our /boot partition.  Usually the same as GRUB_DEVICE.
+ GRUB_DEVICE_BOOT="`${grub_probe} --target=device /boot`"
+diff -pruN grub2-1.97~beta4.orig/util/grub-mkconfig_lib.in grub2-1.97~beta4/util/grub-mkconfig_lib.in
+--- grub2-1.97~beta4.orig/util/grub-mkconfig_lib.in	2009-09-23 09:46:08.000000000 +0000
++++ grub2-1.97~beta4/util/grub-mkconfig_lib.in	2009-12-05 21:42:18.876544591 +0000
+@@ -215,3 +215,79 @@ version_find_latest ()
+   done
+   echo "$a"
+ }
++
++legacy_find_device ()
++{
++    mount_point=$1
++
++    # Autodetect current root device
++    device=
++    if [ -f /etc/fstab ] ; then
++        device="`awk '$1!~/^#/{
++          if ($2 ~ "^/+$") { $2 = "/"; } else { sub("/*$", "", $2); }
++          if ($2 == "'"$mount_point"'"){
++                  print $1;
++              }
++          }' /etc/fstab | tail -n 1`"
++    fi
++
++    if [ -n "$device" ] ; then
++        case "$device" in
++            LABEL=* | UUID=*)
++                device="`findfs $device`"
++                device="`readlink -f "$device"`"
++            ;;
++            *)
++                device=`readlink -f "$device"`
++            ;;
++        esac
++    fi
++
++    echo $device
++}
++
++legacy_find_root_device ()
++{
++    echo "Cannot determine root device.  Trying legacy probe method" >&2
++    device="`legacy_find_device /`"
++
++    if [ -z "$device" ]; then
++        echo "Cannot determine root device.  Assuming /dev/sda1" >&2
++        echo "This error is probably caused by an invalid /etc/fstab" >&2
++        device=/dev/sda1
++    fi
++
++    echo $device
++}
++
++legacy_convert_to_uuid()
++{
++    echo "Cannot determine uuid of root device.  Trying legacy probe method" >&2
++    local dev; dev="$1"
++
++    convert=false
++    case "$dev" in
++        /dev/disk/*)
++          ;;
++        /dev/mapper/*)
++          ;;
++        /dev/evms/[hs]d[a-z][0-9]*)
++            convert=:
++          ;;
++        /dev/evms/*)
++          ;;
++        /dev/md[0-9]*)
++          ;;
++        /dev/*)
++            convert=:
++          ;;
++    esac
++    if $convert; then
++        if [ -b "$dev" ]; then
++            uuid="`blkid -o value -s UUID "$dev" || true`"
++        fi
++    fi
++
++    echo "$uuid"
++}
++
