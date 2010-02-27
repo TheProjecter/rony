@@ -1,0 +1,13 @@
+[General]
+view_mode=1
+terminal=xterm
+
+[Window]
+width=863
+height=636
+splitter_pos=160
+maximized=0
+
+[Desktop]
+[Interface]
+always_show_tabs=1
