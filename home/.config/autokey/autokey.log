@@ -1,0 +1,185 @@
+INFO - root - Initialising application
+INFO - config-manager - No configuration file found - creating new one
+INFO - config-manager - Configuration changed - rebuilding in-memory structures
+INFO - config-manager - Persisting configuration
+INFO - root - Initialise global hotkeys
+INFO - config-manager - Finished persisting configuration - no errors
+INFO - service - Starting service
+INFO - interface - Attempting to establish connection to EvDev daemon
+INFO - interface - EvDev daemon connected
+INFO - interface - EvDev interface thread starting
+INFO - service - Service now marked as running
+INFO - root - Displaying configuration window
+INFO - root - Entering main()
+INFO - config-manager - Configuration changed - rebuilding in-memory structures
+INFO - config-manager - Persisting configuration
+INFO - config-manager - Backing up existing config file
+INFO - root - Initialise global hotkeys
+INFO - config-manager - Finished persisting configuration - no errors
+INFO - config-manager - Configuration changed - rebuilding in-memory structures
+INFO - config-manager - Persisting configuration
+INFO - config-manager - Backing up existing config file
+INFO - root - Initialise global hotkeys
+INFO - config-manager - Finished persisting configuration - no errors
+INFO - root - Displaying configuration window
+INFO - config-manager - Configuration changed - rebuilding in-memory structures
+INFO - config-manager - Persisting configuration
+INFO - config-manager - Backing up existing config file
+INFO - root - Initialise global hotkeys
+INFO - config-manager - Finished persisting configuration - no errors
+INFO - root - Displaying abbreviation popup
+INFO - config-manager - Configuration changed - rebuilding in-memory structures
+INFO - config-manager - Persisting configuration
+INFO - config-manager - Backing up existing config file
+INFO - root - Initialise global hotkeys
+INFO - config-manager - Finished persisting configuration - no errors
+INFO - config-manager - Configuration changed - rebuilding in-memory structures
+INFO - config-manager - Persisting configuration
+INFO - config-manager - Backing up existing config file
+INFO - root - Initialise global hotkeys
+INFO - config-manager - Finished persisting configuration - no errors
+INFO - config-manager - Configuration changed - rebuilding in-memory structures
+INFO - config-manager - Persisting configuration
+INFO - config-manager - Backing up existing config file
+INFO - root - Initialise global hotkeys
+INFO - config-manager - Finished persisting configuration - no errors
+INFO - config-manager - Configuration changed - rebuilding in-memory structures
+INFO - config-manager - Persisting configuration
+INFO - config-manager - Backing up existing config file
+INFO - root - Initialise global hotkeys
+INFO - config-manager - Finished persisting configuration - no errors
+INFO - root - Displaying abbreviation popup
+INFO - interface - Got XMappingNotify - reloading keyboard mapping
+INFO - interface - Got XMappingNotify - reloading keyboard mapping
+INFO - interface - Got XMappingNotify - reloading keyboard mapping
+INFO - interface - Got XMappingNotify - reloading keyboard mapping
+INFO - root - Displaying configuration window
+INFO - config-manager - Configuration changed - rebuilding in-memory structures
+INFO - config-manager - Persisting configuration
+INFO - config-manager - Backing up existing config file
+INFO - root - Initialise global hotkeys
+INFO - config-manager - Finished persisting configuration - no errors
+INFO - root - Displaying abbreviation popup
+INFO - root - Displaying abbreviation popup
+INFO - root - Displaying configuration window
+INFO - config-manager - Configuration changed - rebuilding in-memory structures
+INFO - config-manager - Persisting configuration
+INFO - config-manager - Backing up existing config file
+INFO - root - Initialise global hotkeys
+INFO - config-manager - Finished persisting configuration - no errors
+INFO - config-manager - Configuration changed - rebuilding in-memory structures
+INFO - config-manager - Persisting configuration
+INFO - config-manager - Backing up existing config file
+INFO - root - Initialise global hotkeys
+INFO - config-manager - Finished persisting configuration - no errors
+INFO - config-manager - Configuration changed - rebuilding in-memory structures
+INFO - config-manager - Persisting configuration
+INFO - config-manager - Backing up existing config file
+INFO - root - Initialise global hotkeys
+INFO - config-manager - Finished persisting configuration - no errors
+INFO - config-manager - Configuration changed - rebuilding in-memory structures
+INFO - config-manager - Persisting configuration
+INFO - config-manager - Backing up existing config file
+INFO - root - Initialise global hotkeys
+INFO - config-manager - Finished persisting configuration - no errors
+INFO - config-manager - Configuration changed - rebuilding in-memory structures
+INFO - config-manager - Persisting configuration
+INFO - config-manager - Backing up existing config file
+INFO - root - Initialise global hotkeys
+INFO - config-manager - Finished persisting configuration - no errors
+INFO - config-manager - Configuration changed - rebuilding in-memory structures
+INFO - config-manager - Persisting configuration
+INFO - config-manager - Backing up existing config file
+INFO - root - Initialise global hotkeys
+INFO - config-manager - Finished persisting configuration - no errors
+INFO - config-manager - Configuration changed - rebuilding in-memory structures
+INFO - config-manager - Persisting configuration
+INFO - config-manager - Backing up existing config file
+INFO - root - Initialise global hotkeys
+INFO - config-manager - Finished persisting configuration - no errors
+INFO - config-manager - Configuration changed - rebuilding in-memory structures
+INFO - config-manager - Persisting configuration
+INFO - config-manager - Backing up existing config file
+INFO - root - Initialise global hotkeys
+INFO - config-manager - Finished persisting configuration - no errors
+INFO - config-manager - Configuration changed - rebuilding in-memory structures
+INFO - config-manager - Persisting configuration
+INFO - config-manager - Backing up existing config file
+INFO - root - Initialise global hotkeys
+INFO - config-manager - Finished persisting configuration - no errors
+INFO - config-manager - Configuration changed - rebuilding in-memory structures
+INFO - config-manager - Persisting configuration
+INFO - config-manager - Backing up existing config file
+INFO - root - Initialise global hotkeys
+INFO - config-manager - Finished persisting configuration - no errors
+INFO - config-manager - Configuration changed - rebuilding in-memory structures
+INFO - config-manager - Persisting configuration
+INFO - config-manager - Backing up existing config file
+INFO - root - Initialise global hotkeys
+INFO - config-manager - Finished persisting configuration - no errors
+INFO - config-manager - Configuration changed - rebuilding in-memory structures
+INFO - config-manager - Persisting configuration
+INFO - config-manager - Backing up existing config file
+INFO - root - Initialise global hotkeys
+INFO - config-manager - Finished persisting configuration - no errors
+INFO - config-manager - Configuration changed - rebuilding in-memory structures
+INFO - config-manager - Persisting configuration
+INFO - config-manager - Backing up existing config file
+INFO - root - Initialise global hotkeys
+INFO - config-manager - Finished persisting configuration - no errors
+INFO - config-manager - Configuration changed - rebuilding in-memory structures
+INFO - config-manager - Persisting configuration
+INFO - config-manager - Backing up existing config file
+INFO - root - Initialise global hotkeys
+INFO - config-manager - Finished persisting configuration - no errors
+INFO - root - Displaying abbreviation popup
+INFO - config-manager - Configuration changed - rebuilding in-memory structures
+INFO - config-manager - Persisting configuration
+INFO - config-manager - Backing up existing config file
+INFO - root - Initialise global hotkeys
+INFO - config-manager - Finished persisting configuration - no errors
+INFO - config-manager - Configuration changed - rebuilding in-memory structures
+INFO - config-manager - Persisting configuration
+INFO - config-manager - Backing up existing config file
+INFO - root - Initialise global hotkeys
+INFO - config-manager - Finished persisting configuration - no errors
+INFO - interface - Got XMappingNotify - reloading keyboard mapping
+INFO - interface - Got XMappingNotify - reloading keyboard mapping
+INFO - interface - Got XMappingNotify - reloading keyboard mapping
+INFO - interface - Got XMappingNotify - reloading keyboard mapping
+INFO - interface - Got XMappingNotify - reloading keyboard mapping
+INFO - interface - Got XMappingNotify - reloading keyboard mapping
+INFO - interface - Got XMappingNotify - reloading keyboard mapping
+INFO - interface - Got XMappingNotify - reloading keyboard mapping
+INFO - interface - Got XMappingNotify - reloading keyboard mapping
+INFO - interface - Got XMappingNotify - reloading keyboard mapping
+INFO - interface - Got XMappingNotify - reloading keyboard mapping
+INFO - interface - Got XMappingNotify - reloading keyboard mapping
+INFO - interface - Got XMappingNotify - reloading keyboard mapping
+INFO - interface - Got XMappingNotify - reloading keyboard mapping
+INFO - root - Displaying configuration window
+INFO - root - Displaying configuration window
+INFO - interface - Got XMappingNotify - reloading keyboard mapping
+INFO - interface - Got XMappingNotify - reloading keyboard mapping
+INFO - interface - Got XMappingNotify - reloading keyboard mapping
+INFO - interface - Got XMappingNotify - reloading keyboard mapping
+INFO - interface - Got XMappingNotify - reloading keyboard mapping
+INFO - interface - Got XMappingNotify - reloading keyboard mapping
+INFO - root - Displaying configuration window
+INFO - interface - Got XMappingNotify - reloading keyboard mapping
+INFO - interface - Got XMappingNotify - reloading keyboard mapping
+INFO - interface - Got XMappingNotify - reloading keyboard mapping
+INFO - interface - Got XMappingNotify - reloading keyboard mapping
+INFO - interface - Got XMappingNotify - reloading keyboard mapping
+INFO - interface - Got XMappingNotify - reloading keyboard mapping
+ERROR - interface - Connection to EvDev daemon lost
+Traceback (most recent call last):
+  File "/usr/lib64/python2.6/site-packages/autokey/interface.py", line 512, in run
+    keyCode, button, state = data.split(',')
+ValueError: need more than 1 value to unpack
+INFO - interface - Attempting to establish connection to EvDev daemon
+INFO - interface - Attempting to establish connection to EvDev daemon
+INFO - root - Shutting down
+INFO - service - Service shutting down
+INFO - interface - Attempting to establish connection to EvDev daemon
+INFO - interface - EvDev interface thread terminated
