@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin id="Gnumeric_PythonLoader">
+	<information>
+		<name>Python plugin loader</name>
+		<description>This plugin provides support for Python plugins</description>
+		<require_explicit_enabling/>
+	</information>
+	<loader type="Gnumeric_Builtin:module">
+		<attribute value="python_loader" name="module_file"/>
+	</loader>
+	<services>
+		<service type="plugin_loader" id="python"/>
+		<service type="ui" id="console" file="ui-console-menu.xml">
+			<actions>
+				<action name="ShowConsole">
+					<label>Python console</label>
+				</action>
+			</actions>
+		</service>
+	</services>
+</plugin>
