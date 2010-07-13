@@ -1,0 +1,22 @@
+# card reader
+sdhci
+sdhci_pci
+mmc_core
+ricoh_mmc
+
+# webcam
+v4l1_compat
+v4l2_compat_ioctl32
+uvcvideo
+videodev
+
+# eth
+llc
+stp
+bridge
+e1000e
+
+# for X
+psmouse
+intel_agp
+nouveau
