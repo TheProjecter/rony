@@ -1,7 +1,7 @@
 #!/bin/sh
 
-WM=openbox
-
+WM=awesome
+# WM=openbox
 
 export LANG=en_US.UTF-8
 LANG=en_US.UTF-8 scim -d
@@ -24,7 +24,7 @@ xinput list | grep -q "${F}" && {
 	# xinput set-prop "${F}" "Evdev Middle Button Timeout" 50
 }
 
-
+xrdb -m .Xresources
 urxvtd -q -o -f
 urxvtc -e tmux at &
 
@@ -42,6 +42,7 @@ case "$WM" in
 		exec awesome
 		;;
 	openbox)
+		docker &
 		exec openbox-session
 		;;
 	*)

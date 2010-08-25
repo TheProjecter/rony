@@ -6,14 +6,19 @@ require("awful.rules")
 require("beautiful")
 -- Notification library
 require("naughty")
+require("vicious")
 
 -- {{{ Variable definitions
 -- Themes define colours, icons, and wallpapers
 beautiful.init("/usr/share/awesome/themes/default/theme.lua")
+-- beautiful.init("/usr/share/awesome/themes/sky/theme.lua")
+-- beautiful.init("/usr/share/awesome/themes/zenburn/theme.lua")
 
 -- This is used later as the default terminal and editor to run.
-terminal = "xterm"
-editor = os.getenv("EDITOR") or "nano"
+-- terminal = "xterm"
+terminal = "urxvtc"
+-- editor = os.getenv("EDITOR") or "nano"
+editor = os.getenv("EDITOR") or "vim"
 editor_cmd = terminal .. " -e " .. editor
 
 -- Default modkey.
@@ -60,7 +65,19 @@ myawesomemenu = {
 }
 
 mymainmenu = awful.menu({ items = { { "awesome", myawesomemenu, beautiful.awesome_icon },
-                                    { "open terminal", terminal }
+                                    { "open terminal"       , terminal },
+                                    { "firefox"             , "firefox" },
+                                    { "gimp"                , "gimp" },
+                                    { "pidgin"              , "pidgin" },
+				    { ""                    , nil },
+				    { "Office Writer"       , "oowriter" },
+				    { "Office Spreadsheet"  , "oocalc" },
+				    { "Office Presentation" , "ooimpress" },
+				    { "Office Draw"         , "oodraw" },
+				    { "Office Database"     , "oobase" },
+				    { "Office Math"         , "oomath" },
+				    { "Office Printer Admin", "ooffice-printeradmin" },
+                                    { "geeqie"              , "geeqie" }
                                   }
                         })
 
@@ -74,6 +91,14 @@ mytextclock = awful.widget.textclock({ align = "right" })
 
 -- Create a systray
 mysystray = widget({ type = "systray" })
+
+-- CPU
+cpuwidget = widget({ type = "textbox" })
+vicious.register(cpuwidget, vicious.widgets.cpu, " CPU-$1%")
+
+-- MEM
+memwidget = widget({ type = "textbox" })
+vicious.register(memwidget, vicious.widgets.mem, "$1% $2/$3MB", 2)
 
 -- Create a wibox for each screen and add it
 mywibox = {}
@@ -145,6 +170,8 @@ for s = 1, screen.count() do
         },
         mylayoutbox[s],
         mytextclock,
+	cpuwidget,
+	memwidget,
         s == 1 and mysystray or nil,
         mytasklist[s],
         layout = awful.widget.layout.horizontal.rightleft
@@ -333,3 +360,5 @@ end)
 client.add_signal("focus", function(c) c.border_color = beautiful.border_focus end)
 client.add_signal("unfocus", function(c) c.border_color = beautiful.border_normal end)
 -- }}}
+
+-- vim: filetype=lua:expandtab:shiftwidth=4:tabstop=4:softtabstop=4:encoding=utf-8:textwidth=80

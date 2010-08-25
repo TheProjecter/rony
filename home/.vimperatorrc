@@ -53,13 +53,16 @@ set! browser.tabs.autoHide=false
 set! browser.tabs.closeWindowWithLastTab=false
 set! browser.zoom.full=true
 " set! general.useragent.override="Mozilla/5.0"
+set! general.useragent.vendor=""
 set! geo.enabled=false
 set! geo.wifi.url=""
 set! intl.charset.default=UTF-8
 set! layout.css.dpi=0
 set! middlemouse.contentLoadURL=false
+" Those concerned with privacy can set this to 0, realizing that this may adversely affect some sites. Those wanting to ensure compatibility should leave it at the default. 
 set! network.http.sendRefererHeader=0
-set! network.http.sendSecureXSiteReferer=false
+" Those concerned with privacy can set this to false, realizing that this may adversely affect some sites. Those wanting to ensure compatibility should leave it at the default. 
+set! network.http.sendSecureXSiteReferrer=false
 set! network.prefetch-next=true
 set! plugin.expose_full_path=true
 set! security.enable_java=false
@@ -116,11 +119,11 @@ set! font.minimum-size.zh-CN=14
 set! font.minimum-size.zh-HK=14
 set! font.minimum-size.zh-TW=14
 
-set! font.size.fixed.x-unicode=16
-set! font.size.fixed.x-western=16
-set! font.size.fixed.zh-CN=16
-set! font.size.fixed.zh-HK=16
-set! font.size.fixed.zh-TW=16
+set! font.size.fixed.x-unicode=12
+set! font.size.fixed.x-western=12
+set! font.size.fixed.zh-CN=12
+set! font.size.fixed.zh-HK=12
+set! font.size.fixed.zh-TW=12
 
 set! font.size.variable.x-unicode=16
 set! font.size.variable.x-western=16
@@ -135,3 +138,6 @@ set! extensions.tabkit.firstRunWizardDone=true
 set! extensions.tabkit.gestures.tabWheelTabSwitch=false
 set! extensions.tabkit.tabSidebarWidth=60
 set! extensions.tabkit.tabbarPosition=1
+" Addon: Gmarks
+set! gmarks.showAddBookmark=true
+
