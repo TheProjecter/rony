@@ -1,0 +1,8 @@
+
+groupadd -g 1000 <name>
+
+useradd -m -u 1000 -g 1000 -G wheel,audio,video <name>
+
+visudo (uncomment wheel)
+
+
