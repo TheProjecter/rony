@@ -119,12 +119,28 @@
       </startupnotify>
     </action>
   </item>
-  <item label="Firefox Facebook Games">
+  <item label="Opera">
     <action name="Execute">
-      <command>firefox --no-remote -P fbrony</command>
+      <command>opera</command>
       <startupnotify>
         <enabled>yes</enabled>
-        <wmclass>Firefox</wmclass>
+        <wmclass>Opera</wmclass>
+      </startupnotify>
+    </action>
+  </item>
+  <item label="Konqueror">
+    <action name="Execute">
+      <command>konqueror</command>
+      <startupnotify>
+        <enabled>yes</enabled>
+      </startupnotify>
+    </action>
+  </item>
+  <item label="Epiphany">
+    <action name="Execute">
+      <command>epiphany</command>
+      <startupnotify>
+        <enabled>yes</enabled>
       </startupnotify>
     </action>
   </item>
@@ -355,116 +371,8 @@
   </item>
 </menu>
 
-<menu id="lockscreen-menu" label="lock screen">
-	<item label="Now">
-		<action name="Execute">
-			<command>xlock -mode blank</command>
-		</action>
-	</item>
-	<item label="Cancel">
-		<action name="Execute">
-			<command>kill -15 $(pidof xautolock)</command>
-		</action>
-	</item>
-</menu>
-
-<!--
-	<item label="dpms 3 10 15">
-		<action name="Execute">
-			<command>kill -15 $(pidof xautolock) && xset dpms 180 600 900 && xautolock -time 4 -locker "xlock -mode blank"&</command>
-		</action>
-	</item>
-	<item label="dpms 30 35 40">
-		<action name="Execute">
-			<command>kill -15 $(pidof xautolock) && xset dpms 1800 2100 2400 && xautolock -time 35 -locker "xlock -mode blank"&</command>
-		</action>
-	</item>
--->
-
-
 <menu id="root-menu" label="Openbox 3">
   <separator label="Applications" />
-  <item label="lxterm">
-    <action name="Execute">
-      <command>lxterminal</command>
-      <startupnotify>
-        <enabled>yes</enabled>
-      </startupnotify>
-    </action>
-  </item>
-  <item label="xterm">
-    <action name="Execute">
-      <command>xterm -fg wheat -bg black -fn -misc-fixed-medium-r-normal--18-120-100-100-c-90-iso10646-1</command>
-      <startupnotify>
-        <enabled>yes</enabled>
-      </startupnotify>
-    </action>
-  </item>
-  <item label="Geany">
-    <action name="Execute">
-      <command>geany</command>
-      <startupnotify>
-        <enabled>yes</enabled>
-      </startupnotify>
-    </action>
-  </item>
-  <item label="pidgin">
-    <action name="Execute">
-      <command>pidgin</command>
-      <startupnotify>
-        <enabled>yes</enabled>
-      </startupnotify>
-    </action>
-  </item>
-  <item label="Rednotenook">
-    <action name="Execute">
-      <command>~rednotebook</command>
-      <startupnotify><enabled>yes</enabled></startupnotify>
-    </action>
-  </item>
-
-  <item label="tmux">
-    <action name="Execute">
-      <command>xterm -e tmux</command>
-    </action>
-  </item>
-
-  <item label="Chromium default">
-    <action name="Execute">
-      <command>~/bin/chromium-default.sh</command>
-      <startupnotify><enabled>yes</enabled></startupnotify>
-    </action>
-  </item>
-
-  <item label="Chromium 0">
-    <action name="Execute">
-      <command>~/bin/chromium-0</command>
-      <startupnotify><enabled>yes</enabled></startupnotify>
-    </action>
-  </item>
-  <item label="Chromium 8118">
-    <action name="Execute">
-      <command>~/bin/chromium-8118</command>
-      <startupnotify><enabled>yes</enabled></startupnotify>
-    </action>
-  </item>
-  <item label="Chromium 8123">
-    <action name="Execute">
-      <command>~/bin/chromium-8123</command>
-      <startupnotify><enabled>yes</enabled></startupnotify>
-    </action>
-  </item>
-
-  <item label="Chromium for Facebook">
-    <action name="Execute">
-      <command>~/bin/chromium-facebook.sh</command>
-      <startupnotify><enabled>yes</enabled></startupnotify>
-    </action>
-  </item>
-
-  <item label="htop"><action name="Execute"><command>xterm -fn Terminus -e htop</command></action><decor>no</decor></item>
-  <item label="mc"><action name="Execute"><command>xterm -e mc</command></action><decor>no</decor></item>
-
   <menu id="apps-accessories-menu"/>
   <menu id="apps-editors-menu"/>
   <menu id="apps-graphics-menu"/>
@@ -476,30 +384,6 @@
   <separator label="System" />
   <menu id="system-menu"/>
   <separator />
-  <menu id="lockscreen-menu"/>
-
-                <menu id="dpms" label="dpms">
-                        <item label="DPMS 3 10 15">
-                                <action name="Execute">
-                                        <execute>
-                                                /usr/local/bin/X/dpms-180.sh
-                                        </execute>
-                                </action>
-                        </item>
-                        <item label="DPMS 30 35 40">
-                                <action name="Execute">
-                                        <execute>
-                                                /usr/local/bin/X/dpms-1800.sh
-                                        </execute>
-                                </action>
-                        </item>
-                </menu>
-
-  <item label="lock screen">
-    <action name="Execute">
-      <command>xlock -mode blank</command>
-    </action>
-  </item>
   <item label="Log Out">
     <action name="Exit">
       <prompt>yes</prompt>
