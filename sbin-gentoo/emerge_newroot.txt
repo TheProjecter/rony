@@ -1,0 +1,135 @@
+    1  2010-10-03 15:56:05 mount
+    2  2010-10-02 19:45:32 umount dev/pts
+    3  2010-10-02 19:45:36 umount boot/
+    4  2010-10-02 20:40:05 dmesg
+    5  2010-10-03 15:56:11 mount
+    6  2010-10-03 15:56:18 env-update 
+    7  2010-10-03 15:56:27 etc-update 
+    8  2010-10-03 15:56:30 . /etc/profile
+    9  2010-10-03 15:56:37 mount
+   10  2010-10-03 15:56:43 cat etc/mta
+   11  2010-10-03 15:57:05 ls -la /boot/
+   12  2010-10-03 15:57:16 mount /dev/sdd1 boot/ 
+   13  2010-10-03 15:57:18 df
+   14  2010-10-03 15:57:30 eix-sync 
+   15  2010-10-03 16:00:45 eix-
+   16  2010-10-03 16:00:46 eix-update 
+   17  2010-10-03 16:00:53 emerge world -uDNpv
+   18  2010-10-03 16:01:20 emerge gentoo-sources gnutls orbit -uDNpv
+   19  2010-10-03 16:01:28 eix compress
+   20  2010-10-03 16:01:54 fix fuse
+   21  2010-10-03 16:01:56 eix fuse
+   22  2010-10-03 16:02:22 emerge gentoo-sources gnutls orbit -uDN
+   23  2010-10-03 16:14:40 etc-update 
+   24  2010-10-03 16:14:51 env-update 
+   25  2010-10-03 16:14:55 . /etc/profile
+   26  2010-10-03 16:14:56 df
+   27  2010-10-03 16:15:05 cd /u
+   28  2010-10-03 16:15:08 cd /usr/src/linux
+   29  2010-10-03 16:15:10 pwd -P
+   30  2010-10-03 16:15:21 patch -p1 --dry-run < ../tp_smapi-0.40-for-2.6.35-gentoo-T61.patch 
+   31  2010-10-03 16:15:25 patch -p1 < ../tp_smapi-0.40-for-2.6.35-gentoo-T61.patch 
+   32  2010-10-03 16:15:36 cp ../config-t61-2.6.35-gentoo-r8 .config
+   33  2010-10-03 16:15:38 make oldconfig
+   34  2010-10-03 16:15:45 make menuconfig
+   35  2010-10-03 16:18:13 time ( make -j3 bzImage && make -j3 modules && make modules_install)
+   36  2010-10-03 17:30:23 eix dkopp
+   37  2010-10-03 17:32:29 eix btrfs-progs
+   38  2010-10-03 17:32:46 emerge btrfs-progs
+   39  2010-10-03 17:33:37 etc-update 
+   40  2010-10-03 17:33:39 env-update 
+   41  2010-10-03 17:33:41 . /etc/profile
+   42  2010-10-03 17:33:43 df
+   43  2010-10-03 18:19:19 ls -la /boot/
+   44  2010-10-03 18:19:27 emerge grub -uDNpv
+   45  2010-10-03 18:19:34 emerge grub -pv
+   46  2010-10-03 18:19:47 emerge grub 
+   47  2010-10-03 18:23:07 ls -a /boot/grub/
+   48  2010-10-03 18:28:09 grub-setup /dev/sdd
+   49  2010-10-03 18:28:57 grub-install /dev/sdd
+   50  2010-10-03 18:29:09 ls -a /boot/grub/
+   51  2010-10-03 18:29:26 grub-setup /dev/sdd
+   52  2010-10-03 18:29:37 blkid /dev/sdd*
+   53  2010-10-03 18:29:42 fdisk -l /dev/sdd
+   54  2010-10-03 18:29:48 df
+   55  2010-10-03 18:31:07 mkdir /tmp/bb
+   56  2010-10-03 18:31:15 mount /dev/sdd2 /tmp/bb/ 
+   57  2010-10-03 18:31:16 mount
+   58  2010-10-03 18:31:19 df
+   59  2010-10-03 18:31:32 ls /tmp/bb/
+   60  2010-10-03 18:31:35 ls /tmp/bb/etc/
+   61  2010-10-03 18:31:45 ls /tmp/bb/etc/mak*
+   62  2010-10-03 18:32:09 umount /tmp/bb/
+   63  2010-10-03 18:32:10 df
+   64  2010-10-03 18:33:45 mkfs.ext4 /dev/sdd2 -L USB16G_GENTOO64 -O ^has_journal,^resize_inode,^huge_file,^large_file
+   65  2010-10-03 18:34:26 tune2fs /dev/sdd2 -c 0 -i 0 -e remount-ro 
+   66  2010-10-03 18:34:33 e2fsck /dev/sdd2 -Dfy
+   67  2010-10-03 18:34:44 fsck.ext4 /dev/sdd2 
+   68  2010-10-03 18:34:46 fsck.ext4 /dev/sdd2 -f
+   69  2010-10-03 18:34:48 df
+   70  2010-10-03 18:35:31 mount /dev/sdd2 /tmp/bb -o noatime,nodiratime,commit=120
+   71  2010-10-03 18:35:39 blkid /dev/sdd2
+   72  2010-10-03 18:36:16 e2fsck /dev/sdd2 -Dfy
+   73  2010-10-03 18:36:23 tune2fs /dev/sdd2 -l
+   74  2010-10-03 18:36:31 ls
+   75  2010-10-03 18:36:48 mount /dev/sdd2 /tmp/bb -o noatime,nodiratime,commit=120 -t ext4
+   76  2010-10-03 18:36:50 df
+   77  2010-10-03 18:36:51 mount
+   78  2010-10-03 18:37:00 ls /tmp/bb/
+   79  2010-10-03 18:37:51 ROOT=/tmp/bb emerge baselayout openrc mc --usepkgonly -uDNpv
+   80  2010-10-03 18:38:50 ROOT=/tmp/bb emerge baselayout openrc mc xinit awesome tmux htop btrfs-progs --usepkgonly -uDNpv
+   81  2010-10-03 18:39:26 ROOT=/tmp/bb emerge baselayout openrc mc xinit awesome tmux htop btrfs-progs --usepkgonly -uDNpv | grep gcc
+   82  2010-10-03 18:39:42 ROOT=/tmp/bb emerge baselayout openrc mc xinit awesome tmux htop btrfs-progs grub --usepkgonly -uDNpv | grep grub
+   83  2010-10-03 18:39:54 ROOT=/tmp/bb emerge baselayout openrc mc xinit awesome tmux htop btrfs-progs grub --usepkgonly -uDNpv 
+   84  2010-10-03 18:40:15 ROOT=/tmp/bb emerge baselayout openrc mc xinit awesome tmux htop btrfs-progs grub ruby --usepkgonly -uDNpv 
+   85  2010-10-03 18:40:29 ROOT=/tmp/bb emerge baselayout openrc mc xinit awesome tmux htop btrfs-progs grub gcc --usepkgonly -uDNpv 
+   86  2010-10-03 18:40:52 ROOT=/tmp/bb emerge baselayout openrc mc xinit awesome tmux htop btrfs-progs grub advancecomp gifsicle mplayer --usepkgonly -uDNpv 
+   87  2010-10-03 18:41:12 ROOT=/tmp/bb emerge baselayout openrc mc xinit awesome tmux htop btrfs-progs grub advancecomp gifsicle mplayer firefox --usepkgonly -uDNpv 
+   88  2010-10-03 18:41:33 time ROOT=/tmp/bb emerge baselayout openrc mc xinit awesome tmux htop btrfs-progs grub advancecomp gifsicle mplayer firefox --usepkgonly -uDN
+   89  2010-10-03 19:13:37 df
+   90  2010-10-03 19:13:51 cd /tmp/bb/
+   91  2010-10-03 19:13:54 cd etc/
+   92  2010-10-03 19:13:57 cat fstab 
+   93  2010-10-03 19:14:05 blkid /dev/sdd*
+   94  2010-10-03 19:14:08 blkid /dev/sdd* >> fstab 
+   95  2010-10-03 19:14:13 vi fstab 
+   96  2010-10-03 19:17:33 cat /boot/grub/grub.cfg 
+   97  2010-10-03 19:17:58 mv /usr/src/linux/arch/x86/boot/bzImage /boot/bzImage
+   98  2010-10-03 19:18:01 depmod -a
+   99  2010-10-03 19:18:10 ls /lib/modules/
+  100  2010-10-03 19:18:21 ls /boot/
+  101  2010-10-03 19:19:25 grub-mkconfig 
+  102  2010-10-03 19:20:33 cd /boot/
+  103  2010-10-03 19:20:34 ls -la
+  104  2010-10-03 19:20:47 mv bzImage kernel-gentoo-2.6.35-r9
+  105  2010-10-03 19:20:48 ls
+  106  2010-10-03 19:20:50 grub-mkconfig 
+  107  2010-10-03 19:21:05 grub-mkconfig -o /boot/grub/grub.cfg
+  108  2010-10-03 19:21:27 time ROOT=/tmp/bb emerge system -uDNpv
+  109  2010-10-03 19:23:16 time ROOT=/tmp/bb emerge openssh shadow cracklib man-pages udev man psmisc usbutils module-init-tools wget iputils grep which cpio tar sysfsutils gzip kbd iwl4965-ucode -uDNpv
+  110  2010-10-03 19:23:27 time ROOT=/tmp/bb emerge openssh shadow cracklib man-pages udev man psmisc usbutils module-init-tools wget iputils grep which cpio tar sysfsutils gzip kbd iwl4965-ucode -uDN
+  111  2010-10-03 19:24:29 time ROOT=/tmp/bb emerge openssh shadow cracklib man-pages udev man psmisc usbutils module-init-tools wget iputils grep which cpio tar sysfsutils gzip kbd iwl4965-ucode --usepkgonly -uDN
+  112  2010-10-03 19:54:00 time ROOT=/tmp/bb emerge system -uDNpv
+  113  2010-10-03 19:54:22 time ROOT=/tmp/bb emerge patch net-tools procps  -uDNpv
+  114  2010-10-03 19:54:42 time ROOT=/tmp/bb emerge patch net-tools diffutils meld hddtemp smartmontools  hdparm procps  -uDNpv
+  115  2010-10-03 19:54:57 time ROOT=/tmp/bb emerge patch net-tools diffutils  hddtemp smartmontools  hdparm procps  -uDNpv
+  116  2010-10-03 19:55:05 emerge meld -uDNpv
+  117  2010-10-03 19:55:11 emerge meld -uDN
+  118  2010-10-03 19:56:05 time ROOT=/tmp/bb emerge patch net-tools diffutils  hddtemp smartmontools  hdparm procps meld --usepkgonly -uDNpv
+  119  2010-10-03 19:56:13 time ROOT=/tmp/bb emerge patch net-tools diffutils  hddtemp smartmontools  hdparm procps meld --usepkgonly -uDN
+  120  2010-10-03 20:00:06 time ROOT=/tmp/bb emerge gimp xf86-video-nouveau mesa libddrm --usepkgonly -uDN
+  121  2010-10-03 20:00:15 time ROOT=/tmp/bb emerge gimp xf86-video-nouveau mesa libdrm --usepkgonly -uDN
+  122  2010-10-03 20:07:24 time ROOT=/tmp/bb emerge xf86-input-evdev xf86-input-joystick xorg-server hdapsd --usepkgonly -uDNpv
+  123  2010-10-03 20:07:31 time ROOT=/tmp/bb emerge xf86-input-evdev xf86-input-joystick xorg-server hdapsd --usepkgonly -uDN
+  124  2010-10-03 20:08:14 time ROOT=/tmp/bb emerge --usepkgonly xinput xrandr scrot feh -uDNpv
+  125  2010-10-03 20:08:25 time ROOT=/tmp/bb emerge --usepkgonly xinput xrandr scrot feh vim -uDNpv
+  126  2010-10-03 20:08:35 time ROOT=/tmp/bb emerge --usepkgonly xinput xrandr scrot feh vim rxvt-unicode -uDNpv
+  127  2010-10-03 20:08:49 time ROOT=/tmp/bb emerge --usepkgonly xinput xrandr scrot feh vim rxvt-unicode -uDN
+  128  2010-10-03 20:12:06 time ROOT=/tmp/bb emerge --usepkgonly polipo pdnsd privoxy tor -uDNpv
+  129  2010-10-03 20:12:13 time ROOT=/tmp/bb emerge --usepkgonly polipo pdnsd privoxy tor -uDN
+  130  2010-10-03 20:13:09 df
+  131  2010-10-03 20:13:23 cd /tmp/bb
+  132  2010-10-03 20:13:24 ls -la
+  133  2010-10-03 20:14:55 mkdir boot dev home media mnt opt proc sys
+  134  2010-10-03 20:15:14 history 
+  135  2010-10-03 20:15:29 history >> /emerge_newroot.txt
