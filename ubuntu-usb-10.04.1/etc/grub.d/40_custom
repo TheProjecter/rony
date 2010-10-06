@@ -1,0 +1,34 @@
+#!/bin/sh
+exec tail -n +3 $0
+menuentry "SystemRescueCD 1.6.1 64-bit (RAM)" {
+        root='(hd0,1)'
+        set isofile="/iso/systemrescuecd-1.6.1.iso"
+        loopback loop $isofile
+        linux (loop)/isolinux/rescue64 isoloop=$isofile docache
+        initrd (loop)/isolinux/initram.igz
+}
+menuentry "SystemRescueCD 1.6.1 32-bit (RAM)" {
+        root='(hd0,1)'
+        set isofile="/iso/systemrescuecd-1.6.1.iso"
+        loopback loop $isofile
+        linux (loop)/isolinux/rescuecd isoloop=$isofile docache
+        initrd (loop)/isolinux/initram.igz
+}
+
+menuentry 'RIP Linux 10.9 64-bit' {
+	insmod ext2
+	set root='(hd0,1)'
+        search --no-floppy --fs-uuid --set 3294ab1b-e2bd-4d4f-baef-8bb28c5a88b3
+	linux  /rip109/kernel64 max_loop=255 initrd=/rip109/rootfs.cgz init=/linuxrc load_ramdisk=1 prompt_ramdisk=0 root=/dev/ram0 rw nokeymap
+	initrd /rip109/rootfs.cgz
+}
+menuentry 'RIP Linux 10.9 32-bit' {
+	insmod ext2
+	set root='(hd0,1)'
+        search --no-floppy --fs-uuid --set 3294ab1b-e2bd-4d4f-baef-8bb28c5a88b3
+	linux  /rip109/kernel32 root=/dev/ram0 rw vga=normal nokeymap
+	initrd /rip109/rootfs.cgz
+}
+# This file provides an easy way to add custom menu entries.  Simply type the
+# menu entries you want to add after this comment.  Be careful not to change
+# the 'exec tail' line above.
