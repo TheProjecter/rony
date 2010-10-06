@@ -1,0 +1,18 @@
+UUID=0c51f0f0-f110-4a1b-bd00-06248c7ef72d  /boot  ext2   noatime,noauto                                        0 0
+UUID=68440e4d-567d-42e2-a431-fdddea1ffd28  /      btrfs  subvol=ubuntu64,noatime,ssd_spread,compress,thread_pool=2  0 0
+
+none  /home/brother         tmpfs  noatime,size=3200M,mode=0700,uid=1000,gid=1000  0 0
+none  /media                tmpfs  noatime,mode=0755                               0 0
+none  /mnt                  tmpfs  noatime,mode=0755                               0 0
+none  /root                 tmpfs  noatime,mode=0700                               0 0
+none  /tmp                  tmpfs  noatime,size=3200M,mode=1777                    0 0
+none  /var/cache/apt/       tmpfs  noatime,size=3200M,nosuid,nodev                 0 0
+none  /var/cache/pdnsd      tmpfs  noatime,mode=0755,uid=116,gid=13  0 0
+none  /var/cache/polipo     tmpfs  noatime,mode=0750,uid=13,gid=13   0 0
+# none  /var/lib/udisk       tmpfs  relatime,mode=0755,uid=0,gid=0     0 0
+none  /var/lib/postfix      tmpfs  noatime,mode=0755,uid=118,gid=122  0 0
+none  /var/lib/upower       tmpfs  noatime  0 0
+none  /var/lib/urandom      tmpfs  noatime,mode=0755  0 0
+# none  /var/lib/ureadahead  tmpfs  relatime,mode=0755  0 0
+none  /var/log              tmpfs  noatime,mode=0755,noexec  0 0
+none  /var/spool/postfix    tmpfs  noatime,mode=0755,uid=0,gid=0      0 0
