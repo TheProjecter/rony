@@ -1,0 +1,10 @@
+
+after kernel:
+- udev
+
+
+
+
+rc-update add alsasound boot
+
+
