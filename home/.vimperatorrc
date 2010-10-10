@@ -1,0 +1,137 @@
+
+set focuscontent
+set followhints=1
+set hintinputs+=name
+set showstatuslinks=2
+" ?? set hintchars=hjklgfdsa
+set hlsearch
+
+
+" set nextpattern+='次','\bolder\b'
+" set previuspattern+="'前','\bnewer\b'
+
+"nnoremap j 3j
+"nnoremap k 3k
+nnoremap h 3h
+nnoremap l 3l
+
+map <A-Down> :set go=m<CR>
+map <A-Up>   :set go=<CR>
+
+"
+" QMarks
+"
+silent qmark b https://www.google.com/bookmarks/
+silent qmark d https://docs.google.com/
+silent qmark g https://www.google.com/
+silent qmark G https://encrypted.google.com/
+silent qmark m https://mail.google.com/
+silent qmark n https://news.google.com/
+silent qmark r https://www.google.com/reader/
+silent qmark t http://translate.google.com/translate_t?hl=en&sl=en&tl=zh#
+silent qmark v http://tv.in51.com/
+silent qmark y http://youtube.com/
+
+"
+" Hotkeys
+"
+let mapleader=","
+
+
+
+" about:config
+" http://kb.mozillazine.org/About:config_entries
+"
+set! browser.bookmarks.file=
+set! browser.cache.disk.enable=true
+set! browser.cache.disk.capacity=91260
+" set! browser.cache.disk.parent_directory=/tmp/.brother/.cache/
+set! browser.download.useDownloadDir=false
+set! browser.startup.homepage=http://www.google.com/
+set! browser.tabs.autoHide=false
+" set! browser.tabs.closeButtons=2
+set! browser.tabs.closeWindowWithLastTab=false
+set! browser.zoom.full=true
+" set! general.useragent.override="Mozilla/5.0"
+set! geo.enabled=false
+set! geo.wifi.url=""
+set! intl.charset.default=UTF-8
+set! layout.css.dpi=0
+set! middlemouse.contentLoadURL=false
+set! network.http.sendRefererHeader=0
+set! network.http.sendSecureXSiteReferer=false
+set! network.prefetch-next=true
+set! plugin.expose_full_path=true
+set! security.enable_java=false
+set! security.enable_ssl3=true
+set! security.enable.tls=true
+
+" Speedup Firefox
+set! browser.cache.memory.capacity=65536
+set! content.interrupt.parsing=true
+set! content.max.tokenizing.time=2250000
+set! content.notify.backoffcount=5
+set! content.notify.interval=750000
+set! content.notify.ontimer=true
+set! content.switch.threshold=750000
+set! network.dns.disableIPv6=true
+set! network.http.max-connections=48
+set! network.http.max-connections-per-server=24
+set! network.http.max-persistent-connections-per-proxy=16
+set! network.http.max-persistent-connections-per-server=8
+set! network.http.pipelining=true
+set! network.http.pipelining.firstrequests=true
+set! network.http.pipelining.maxrequests=8
+set! network.http.proxy.pipelining=true
+set! nglayout.initialpaint.delay=0
+set! ui.submenuDelay=0
+
+set! font.name.monospace.x-unicode=Consolas
+set! font.name.monospace.x-western=Consolas
+set! font.name.monospace.zh-CN=Consolas
+set! font.name.monospace.zh-HK=Consolas
+set! font.name.monospace.zh-TW=Consolas
+
+set! font.name.sans-serif.x-unicode="DejaVu Serif"
+set! font.name.sans-serif.x-western="DejaVu Serif"
+set! font.name.sans-serif.zh-CN="AR PL UMing CN"
+set! font.name.sans-serif.zh-HK="AR PL UMing TW"
+set! font.name.sans-serif.zh-TW="AR PL UMing TW"
+
+set! font.name.serif.x-unicode="DejaVu Serif"
+set! font.name.serif.x-western="DejaVu Serif"
+set! font.name.serif.zh-CN="AR PL UMing CN"
+set! font.name.serif.zh-HK="AR PL UMing TW"
+set! font.name.serif.zh-TW="AR PL UMing TW"
+
+set! font.default.x-unicode="Dejavu Sans"
+set! font.default.x-western="Dejavu Sans"
+set! font.default.zh-CN="AR RPL UMing CN"
+set! font.default.zh-HK="AR PL UMing TW"
+set! font.default.zh-TW="AR PL UMing TW"
+
+set! font.minimum-size.x-unicode=14
+set! font.minimum-size.x-western=14
+set! font.minimum-size.zh-CN=14
+set! font.minimum-size.zh-HK=14
+set! font.minimum-size.zh-TW=14
+
+set! font.size.fixed.x-unicode=16
+set! font.size.fixed.x-western=16
+set! font.size.fixed.zh-CN=16
+set! font.size.fixed.zh-HK=16
+set! font.size.fixed.zh-TW=16
+
+set! font.size.variable.x-unicode=16
+set! font.size.variable.x-western=16
+set! font.size.variable.zh-CN=16
+set! font.size.vairable.zh-HK=16
+set! font.size.variable.zh-TW=16
+
+" Addon: Tab Kit
+set! extensions.tabkit.customCloseOrder=0
+set! extensions.tabkit.emphasizeCurrentTab=true
+set! extensions.tabkit.firstRunWizardDone=true
+set! extensions.tabkit.gestures.tabWheelTabSwitch=false
+set! extensions.tabkit.tabSidebarWidth=60
+set! extensions.tabkit.tabbarPosition=1
