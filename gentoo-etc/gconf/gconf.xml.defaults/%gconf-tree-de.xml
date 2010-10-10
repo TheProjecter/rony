@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<gconf>
+	<dir name="schemas">
+		<dir name="apps">
+			<dir name="notification-daemon">
+				<entry name="theme">
+					<local_schema short_desc="Aktuelles Thema">
+						<longdesc>Das Thema um Benachrichtigungen anzuzeigen.</longdesc>
+					</local_schema>
+				</entry>
+				<entry name="popup_location">
+					<local_schema short_desc="Popup Position">
+					</local_schema>
+				</entry>
+			</dir>
+		</dir>
+	</dir>
+</gconf>

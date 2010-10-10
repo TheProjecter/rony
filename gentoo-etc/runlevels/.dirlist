@@ -1,0 +1,58 @@
+.:
+total 0
+drwxr-xr-x 1 root root 250 2010-10-09 17:57 boot
+drwxr-xr-x 1 root root 106 2010-10-09 18:14 default
+drwxr-xr-x 1 root root  10 2010-09-02 09:38 nonetwork
+drwxr-xr-x 1 root root  52 2010-09-24 10:45 shutdown
+drwxr-xr-x 1 root root   0 2010-09-02 09:38 single
+drwxr-xr-x 1 root root  28 2010-09-24 10:45 sysinit
+
+./boot:
+total 0
+lrwxrwxrwx 1 root root 17 2010-10-10 21:56 acpid -> /etc/init.d/acpid
+lrwxrwxrwx 1 root root 21 2010-10-10 21:56 alsasound -> /etc/init.d/alsasound
+lrwxrwxrwx 1 root root 20 2010-10-10 21:56 bootmisc -> /etc/init.d/bootmisc
+lrwxrwxrwx 1 root root 23 2010-10-10 21:56 consolefont -> /etc/init.d/consolefont
+lrwxrwxrwx 1 root root 16 2010-10-10 21:56 fsck -> /etc/init.d/fsck
+lrwxrwxrwx 1 root root 20 2010-10-10 21:56 hostname -> /etc/init.d/hostname
+lrwxrwxrwx 1 root root 19 2010-10-10 21:56 hwclock -> /etc/init.d/hwclock
+lrwxrwxrwx 1 root root 19 2010-10-10 21:56 keymaps -> /etc/init.d/keymaps
+lrwxrwxrwx 1 root root 22 2010-10-10 21:56 localmount -> /etc/init.d/localmount
+lrwxrwxrwx 1 root root 19 2010-10-10 21:56 modules -> /etc/init.d/modules
+lrwxrwxrwx 1 root root 16 2010-10-10 21:56 mtab -> /etc/init.d/mtab
+lrwxrwxrwx 1 root root 18 2010-10-10 21:56 net.lo -> /etc/init.d/net.lo
+lrwxrwxrwx 1 root root 18 2010-10-10 21:56 procfs -> /etc/init.d/procfs
+lrwxrwxrwx 1 root root 16 2010-10-10 21:56 root -> /etc/init.d/root
+lrwxrwxrwx 1 root root 16 2010-10-10 21:56 swap -> /etc/init.d/swap
+lrwxrwxrwx 1 root root 18 2010-10-10 21:56 sysctl -> /etc/init.d/sysctl
+lrwxrwxrwx 1 root root 24 2010-10-10 21:56 termencoding -> /etc/init.d/termencoding
+lrwxrwxrwx 1 root root 19 2010-10-10 21:56 urandom -> /etc/init.d/urandom
+
+./default:
+total 0
+lrwxrwxrwx 1 root root 16 2010-10-10 21:56 dbus -> /etc/init.d/dbus
+lrwxrwxrwx 1 root root 18 2010-10-10 21:56 hdapsd -> /etc/init.d/hdapsd
+lrwxrwxrwx 1 root root 17 2010-10-10 21:56 local -> /etc/init.d/local
+lrwxrwxrwx 1 root root 20 2010-10-10 21:56 netmount -> /etc/init.d/netmount
+lrwxrwxrwx 1 root root 19 2010-10-10 21:56 network -> /etc/init.d/network
+lrwxrwxrwx 1 root root 21 2010-10-10 21:56 syslog-ng -> /etc/init.d/syslog-ng
+lrwxrwxrwx 1 root root 26 2010-10-10 21:56 udev-postmount -> /etc/init.d/udev-postmount
+
+./nonetwork:
+total 0
+lrwxrwxrwx 1 root root 17 2010-10-10 21:56 local -> /etc/init.d/local
+
+./shutdown:
+total 0
+lrwxrwxrwx 1 root root 21 2010-10-10 21:56 killprocs -> /etc/init.d/killprocs
+lrwxrwxrwx 1 root root 20 2010-10-10 21:56 mount-ro -> /etc/init.d/mount-ro
+lrwxrwxrwx 1 root root 21 2010-10-10 21:56 savecache -> /etc/init.d/savecache
+
+./single:
+total 0
+
+./sysinit:
+total 0
+lrwxrwxrwx 1 root root 17 2010-10-10 21:56 devfs -> /etc/init.d/devfs
+lrwxrwxrwx 1 root root 17 2010-10-10 21:56 dmesg -> /etc/init.d/dmesg
+lrwxrwxrwx 1 root root 16 2010-10-10 21:56 udev -> /etc/init.d/udev

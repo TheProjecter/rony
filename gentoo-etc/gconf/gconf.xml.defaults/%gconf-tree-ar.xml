@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<gconf>
+	<dir name="schemas">
+		<dir name="apps">
+			<dir name="notification-daemon">
+				<entry name="theme">
+					<local_schema short_desc="النسق الحالي">
+						<longdesc>النسق المستخدم عند عرض التنبيهات</longdesc>
+					</local_schema>
+				</entry>
+				<entry name="popup_location">
+					<local_schema short_desc="موقع التنبيه">
+						<longdesc>الموضع الافتراضي للتنبيهات على مساحة العمل لصف التنبيهات. القيم الممكنة هي: &quot;top_left&quot;,&quot;top_right&quot;,&quot;bottom_left&quot; و &quot;bottom_right&quot;</longdesc>
+					</local_schema>
+				</entry>
+			</dir>
+		</dir>
+	</dir>
+</gconf>

@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<gconf>
+	<dir name="schemas">
+		<dir name="apps">
+			<dir name="notification-daemon">
+				<entry name="theme">
+					<local_schema short_desc="Huidige thema">
+						<longdesc>Het thema dat voor de berichtweergave wordt gebruikt.</longdesc>
+					</local_schema>
+				</entry>
+			</dir>
+		</dir>
+	</dir>
+</gconf>

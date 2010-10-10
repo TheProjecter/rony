@@ -1,0 +1,11 @@
+# undeclared xxx,
+# =media-libs/mesa-9999
+
+# =x11-libs/libdrm-9999
+
+# =x11-drivers/xf86-video-nouveau-9999
+
+=www-client/chromium-7.0.503.1
+
+# undeclared xxx, does not compile
+# =x11-base/nouveau-drm-99999999

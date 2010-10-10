@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<gconf>
+	<dir name="schemas">
+		<dir name="apps">
+			<dir name="notification-daemon">
+				<entry name="theme">
+					<local_schema short_desc="Aktuellt tema">
+						<longdesc>Temat som används för visning av notifieringar.</longdesc>
+					</local_schema>
+				</entry>
+				<entry name="popup_location">
+					<local_schema short_desc="Popup-position">
+						<longdesc>Standardposition för popup-rutor på arbetsutan för notifieringar. Tillåtna värden: &quot;top_left&quot;,&quot;top_right&quot;,&quot;bottom_left&quot; och &quot;bottom_right&quot;</longdesc>
+					</local_schema>
+				</entry>
+			</dir>
+		</dir>
+	</dir>
+</gconf>

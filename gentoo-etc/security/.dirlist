@@ -1,0 +1,7 @@
+.:
+total 0
+drwxr-xr-x 1 root root 16 2010-09-18 23:34 limits.d
+
+./limits.d:
+total 0
+-rw-r--r-- 1 root root 89 2010-09-18 23:34 tor.conf

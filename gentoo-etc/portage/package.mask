@@ -1,0 +1,9 @@
+=sys-boot/grub-9999
+=sci-geosciences/googleearth-5.2.1.1329_beta
+=sci-geosciences/googleearth-5.2.1.1547_beta
+=sci-geosciences/googleearth-5.2.1.1588
+=x11-drivers/xf86-input-joystick-9999
+
+>=sys-apps/hal-0
+>=sys-auth/polkit-0
+>=sys-auth/consolekit-0

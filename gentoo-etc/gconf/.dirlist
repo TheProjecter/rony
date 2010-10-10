@@ -1,0 +1,31 @@
+.:
+total 0
+drwxr-xr-x 1 root root   8 2010-09-19 00:28 2
+drwxr-xr-x 1 root root 294 2010-09-19 00:42 gconf.xml.defaults
+drwxr-xr-x 1 root root  48 2010-09-19 00:28 gconf.xml.mandatory
+drwxr-xr-x 1 root root  48 2010-09-19 00:28 gconf.xml.system
+drwxr-xr-x 1 root root  54 2010-09-19 00:42 schemas
+
+./2:
+total 1
+-rw-r--r-- 1 root root 1295 2010-09-19 00:28 path
+
+./gconf.xml.defaults:
+total 5
+-rw-r--r-- 1 root root  734 2010-09-19 00:42 %gconf-tree-ar.xml
+-rw-r--r-- 1 root root  439 2010-09-19 00:42 %gconf-tree-de.xml
+-rw-r--r-- 1 root root 1193 2010-09-19 00:42 %gconf-tree-it.xml
+-rw-r--r-- 1 root root  331 2010-09-19 00:42 %gconf-tree-nl.xml
+-rw-r--r-- 1 root root  689 2010-09-19 00:42 %gconf-tree-pl.xml
+-rw-r--r-- 1 root root  654 2010-09-19 00:42 %gconf-tree-sv.xml
+-rw-r--r-- 1 root root 2279 2010-09-19 00:42 %gconf-tree.xml
+
+./gconf.xml.mandatory:
+total 0
+
+./gconf.xml.system:
+total 0
+
+./schemas:
+total 8
+-rw-r--r-- 1 root root 4262 2010-09-19 00:42 notification-daemon.schemas

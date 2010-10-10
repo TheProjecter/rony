@@ -1,0 +1,9 @@
+.:
+total 0
+-rw-r--r-- 1 root root 249 2010-10-08 19:42 elog-save-summary
+-rw-r--r-- 1 root root 332 2010-10-02 19:22 nginx
+-rw-r--r-- 1 root root  71 2010-09-17 23:52 openrc
+-rw-r--r-- 1 root root 191 2010-09-18 23:33 privoxy
+-rw-r--r-- 1 root root 105 2010-09-17 21:46 rsyncd
+-rw-r--r-- 1 root root 354 2010-09-18 23:13 syslog-ng
+-rw-r--r-- 1 root root 247 2010-09-18 23:34 tor

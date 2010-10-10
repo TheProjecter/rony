@@ -1,0 +1,6 @@
+.:
+total 1
+-rw-r--r-- 1 root root  83 2010-09-27 19:31 50-openoffice-bin
+-rw-r--r-- 1 root root 382 2009-01-14 14:33 60-java
+-rw-r--r-- 1 root root  41 2010-10-09 10:40 61-sun-jdk-1.6
+-rw-r--r-- 1 root root 869 2009-05-07 05:31 99revdep-rebuild

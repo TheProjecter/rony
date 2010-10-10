@@ -1,0 +1,8 @@
+.:
+total 6
+-rw-r--r-- 1 root root  979 2010-10-02 19:22 fastcgi.conf
+-rw-r--r-- 1 root root  909 2010-10-02 19:22 fastcgi_params
+-rw-r--r-- 1 root root 3174 2010-10-02 19:22 mime.types
+-rw-r--r-- 1 root root 1358 2010-10-02 19:22 nginx.conf
+-rw-r--r-- 1 root root  544 2010-10-02 19:22 scgi_params
+-rw-r--r-- 1 root root  570 2010-10-02 19:22 uwsgi_params

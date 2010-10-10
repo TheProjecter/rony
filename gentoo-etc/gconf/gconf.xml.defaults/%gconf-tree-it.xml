@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<gconf>
+	<dir name="schemas">
+		<dir name="apps">
+			<dir name="notification-daemon">
+				<entry name="default_sound">
+					<local_schema short_desc="Suono predefinito">
+						<longdesc>Il file audio predefinito usato, a meno che una notifica non fornisca l&apos;hint &apos;sound-file&apos; o &apos;suppress-sound&apos;. Lasciare in bianco per non usare alcun suono predefinito.</longdesc>
+					</local_schema>
+				</entry>
+				<entry name="sound_enabled">
+					<local_schema short_desc="Suono abilitato">
+						<longdesc>Attiva e disattiva il supporto audio alle notifiche.</longdesc>
+					</local_schema>
+				</entry>
+				<entry name="theme">
+					<local_schema short_desc="Tema attuale">
+						<longdesc>Il tema usato nel mostrare le notifiche.</longdesc>
+					</local_schema>
+				</entry>
+				<entry name="popup_location">
+					<local_schema short_desc="Posizione popup">
+						<longdesc>Posizione predefinita di comparsa sull&apos;area di lavoro per impilare le notifiche. Valori ammessi: &quot;top_left&quot;, &quot;top_right&quot;, &quot;bottom_left&quot; e &quot;bottom_right&quot;</longdesc>
+					</local_schema>
+				</entry>
+			</dir>
+		</dir>
+	</dir>
+</gconf>
