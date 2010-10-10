@@ -1,0 +1,18 @@
+.:
+total 8
+-rw-r--r-- 1 root root   35 2010-09-24 13:57 client.conf
+-rw-r----- 1 root lp   4044 2010-09-24 13:57 cupsd.conf
+-rw-r----- 1 root lp   4044 2010-09-24 13:57 cupsd.conf.default
+drwxr-xr-x 1 root root   44 2010-09-24 13:57 interfaces
+drwxr-xr-x 1 root root   44 2010-09-24 13:57 ppd
+-rw-r----- 1 root lp    186 2010-09-24 13:57 snmp.conf
+drwxr-xr-x 1 root root   44 2010-09-24 13:57 ssl
+
+./interfaces:
+total 0
+
+./ppd:
+total 0
+
+./ssl:
+total 0

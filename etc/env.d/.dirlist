@@ -1,0 +1,40 @@
+.:
+total 0
+-rw-r--r-- 1 root root 235 2007-08-26 23:57 00basic
+-rw-r--r-- 1 root root  37 2010-09-17 22:43 00glibc
+-rw-r--r-- 1 root root 178 2010-10-09 07:51 03opengl
+-rw-r--r-- 1 root root 108 2010-10-02 19:16 04multilib
+-rw-r--r-- 1 root root 130 2010-09-17 21:52 05binutils
+-rw-r--r-- 1 root root 321 2010-09-17 23:52 05gcc-x86_64-pc-linux-gnu
+-rw-r--r-- 1 root root  35 2010-09-19 01:01 08xulrunner
+-rw-r--r-- 1 root root  37 2010-09-17 21:45 09sandbox
+-rw-r--r-- 1 root root  79 2009-01-14 14:33 20java-config
+-rw-r--r-- 1 root root  81 2010-09-19 00:27 30xdg-data-local
+-rw-r--r-- 1 root root  44 2010-09-18 22:20 37fontconfig
+-rw-r--r-- 1 root root  22 2010-09-24 13:32 44qt4-emul
+-rw-r--r-- 1 root root  33 2010-09-19 00:28 50gconf
+-rw-r--r-- 1 root root  14 2010-09-18 22:44 50gtk2
+-rw-r--r-- 1 root root  36 2010-09-17 23:18 50ncurses
+-rw-r--r-- 1 root root  50 2010-09-17 23:15 70less
+-rw-r--r-- 1 root root  17 2010-10-04 16:37 80mercurial
+-rw-r--r-- 1 root root  94 2010-10-02 19:31 90nss
+-rw-r--r-- 1 root root  54 2010-09-19 00:27 90xdg-data-base
+-rw-r--r-- 1 root root  48 2010-09-17 22:53 98ca-certificates
+-rw-r--r-- 1 root root  42 2009-05-07 05:31 99gentoolkit-env
+drwxr-xr-x 1 root root 104 2010-09-17 21:52 binutils
+drwxr-xr-x 1 root root 116 2010-09-17 23:52 gcc
+drwxr-xr-x 1 root root  76 2010-09-17 22:18 python
+
+./binutils:
+total 0
+-rw-r--r-- 1 root root  15 2010-09-17 20:47 config-x86_64-pc-linux-gnu
+-rw-r--r-- 1 root root 134 2010-09-17 21:51 x86_64-pc-linux-gnu-2.20.1
+
+./gcc:
+total 0
+-rw-r--r-- 1 root root  34 2010-09-17 23:52 config-x86_64-pc-linux-gnu
+-rw-r--r-- 1 root root 285 2010-09-17 23:51 x86_64-pc-linux-gnu-4.4.4
+
+./python:
+total 0
+-rw-r--r-- 1 root root 10 2010-10-02 19:38 config

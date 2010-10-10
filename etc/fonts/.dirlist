@@ -1,0 +1,86 @@
+.:
+total 16
+drwxr-xr-x 1 root root 1918 2010-10-09 00:07 conf.avail
+drwxr-xr-x 1 root root 1346 2010-10-09 14:45 conf.d
+-rw-r--r-- 1 root root 5251 2010-09-18 22:20 fonts.conf
+-rw-r--r-- 1 root root 6961 2010-09-18 22:20 fonts.dtd
+
+./conf.avail:
+total 45
+-rw-r--r-- 1 root root  220 2010-09-18 22:20 10-autohint.conf
+-rw-r--r-- 1 root root  226 2010-09-18 22:20 10-no-sub-pixel.conf
+-rw-r--r-- 1 root root  225 2010-09-18 22:20 10-sub-pixel-bgr.conf
+-rw-r--r-- 1 root root  225 2010-09-18 22:20 10-sub-pixel-rgb.conf
+-rw-r--r-- 1 root root  226 2010-09-18 22:20 10-sub-pixel-vbgr.conf
+-rw-r--r-- 1 root root  226 2010-09-18 22:20 10-sub-pixel-vrgb.conf
+-rw-r--r-- 1 root root  217 2010-09-18 22:20 10-unhinted.conf
+-rw-r--r-- 1 root root  912 2010-09-18 22:20 20-fix-globaladvance.conf
+-rw-r--r-- 1 root root  856 2010-10-09 00:07 20-unhint-small-dejavu-sans.conf
+-rw-r--r-- 1 root root  866 2010-10-09 00:07 20-unhint-small-dejavu-sans-mono.conf
+-rw-r--r-- 1 root root  858 2010-10-09 00:07 20-unhint-small-dejavu-serif.conf
+-rw-r--r-- 1 root root 1157 2010-09-18 22:20 20-unhint-small-vera.conf
+-rw-r--r-- 1 root root  361 2010-09-18 22:21 25-ttf-arphic-ukai-render.conf
+-rw-r--r-- 1 root root  886 2010-09-18 22:21 25-ttf-arphic-uming-bitmaps.conf
+-rw-r--r-- 1 root root  362 2010-09-18 22:21 25-ttf-arphic-uming-render.conf
+-rw-r--r-- 1 root root 2941 2010-09-18 22:20 25-unhint-nonlatin.conf
+-rw-r--r-- 1 root root 3939 2010-09-18 22:20 30-metric-aliases.conf
+-rw-r--r-- 1 root root 1277 2010-09-18 22:20 30-urw-aliases.conf
+-rw-r--r-- 1 root root  343 2010-09-18 22:21 35-ttf-arphic-ukai-aliases.conf
+-rw-r--r-- 1 root root  353 2010-09-18 22:21 35-ttf-arphic-uming-aliases.conf
+-rw-r--r-- 1 root root 2069 2010-09-18 22:20 40-nonlatin.conf
+-rw-r--r-- 1 root root  400 2010-09-18 22:21 41-ttf-arphic-ukai.conf
+-rw-r--r-- 1 root root 1043 2010-09-18 22:21 41-ttf-arphic-uming.conf
+-rw-r--r-- 1 root root 1837 2010-09-18 22:20 45-latin.conf
+-rw-r--r-- 1 root root  545 2010-09-18 22:20 49-sansserif.conf
+-rw-r--r-- 1 root root  245 2010-09-18 22:20 50-user.conf
+-rw-r--r-- 1 root root  189 2010-09-18 22:20 51-local.conf
+-rw-r--r-- 1 root root 2011 2010-10-09 00:07 57-dejavu-sans.conf
+-rw-r--r-- 1 root root 1509 2010-10-09 00:07 57-dejavu-sans-mono.conf
+-rw-r--r-- 1 root root 1649 2010-10-09 00:07 57-dejavu-serif.conf
+-rw-r--r-- 1 root root 1701 2010-09-18 22:20 60-latin.conf
+-rw-r--r-- 1 root root  510 2010-09-18 22:21 64-ttf-arphic-uming.conf
+-rw-r--r-- 1 root root 9880 2010-09-18 22:20 65-fonts-persian.conf
+-rw-r--r-- 1 root root  289 2010-09-18 22:20 65-khmer.conf
+-rw-r--r-- 1 root root 7706 2010-09-18 22:20 65-nonlatin.conf
+-rw-r--r-- 1 root root  672 2010-09-18 22:20 69-unifont.conf
+-rw-r--r-- 1 root root  263 2010-09-18 22:20 70-no-bitmaps.conf
+-rw-r--r-- 1 root root  263 2010-09-18 22:20 70-yes-bitmaps.conf
+-rw-r--r-- 1 root root  611 2010-09-18 22:21 75-ttf-arphic-ukai-select.conf
+-rw-r--r-- 1 root root  388 2010-09-18 22:20 80-delicious.conf
+-rw-r--r-- 1 root root 1691 2010-09-18 22:20 90-synthetic.conf
+-rw-r--r-- 1 root root  540 2010-09-18 22:21 90-ttf-arphic-ukai-embolden.conf
+-rw-r--r-- 1 root root  541 2010-09-18 22:21 90-ttf-arphic-uming-embolden.conf
+
+./conf.d:
+total 1
+lrwxrwxrwx 1 root root  43 2010-10-10 21:48 10-sub-pixel-rgb.conf -> /etc/fonts/conf.avail/10-sub-pixel-rgb.conf
+lrwxrwxrwx 1 root root  39 2010-10-10 21:48 20-fix-globaladvance.conf -> ../conf.avail/20-fix-globaladvance.conf
+lrwxrwxrwx 1 root root  39 2010-10-10 21:48 20-unhint-small-vera.conf -> ../conf.avail/20-unhint-small-vera.conf
+lrwxrwxrwx 1 root root  52 2010-10-10 21:48 25-ttf-arphic-ukai-render.conf -> /etc/fonts/conf.avail/25-ttf-arphic-ukai-render.conf
+lrwxrwxrwx 1 root root  54 2010-10-10 21:48 25-ttf-arphic-uming-bitmaps.conf -> /etc/fonts/conf.avail/25-ttf-arphic-uming-bitmaps.conf
+lrwxrwxrwx 1 root root  53 2010-10-10 21:48 25-ttf-arphic-uming-render.conf -> /etc/fonts/conf.avail/25-ttf-arphic-uming-render.conf
+lrwxrwxrwx 1 root root  36 2010-10-10 21:48 30-metric-aliases.conf -> ../conf.avail/30-metric-aliases.conf
+lrwxrwxrwx 1 root root  33 2010-10-10 21:48 30-urw-aliases.conf -> ../conf.avail/30-urw-aliases.conf
+lrwxrwxrwx 1 root root  53 2010-10-10 21:48 35-ttf-arphic-ukai-aliases.conf -> /etc/fonts/conf.avail/35-ttf-arphic-ukai-aliases.conf
+lrwxrwxrwx 1 root root  54 2010-10-10 21:48 35-ttf-arphic-uming-aliases.conf -> /etc/fonts/conf.avail/35-ttf-arphic-uming-aliases.conf
+lrwxrwxrwx 1 root root  30 2010-10-10 21:48 40-nonlatin.conf -> ../conf.avail/40-nonlatin.conf
+lrwxrwxrwx 1 root root  45 2010-10-10 21:48 41-ttf-arphic-ukai.conf -> /etc/fonts/conf.avail/41-ttf-arphic-ukai.conf
+lrwxrwxrwx 1 root root  46 2010-10-10 21:48 41-ttf-arphic-uming.conf -> /etc/fonts/conf.avail/41-ttf-arphic-uming.conf
+lrwxrwxrwx 1 root root  27 2010-10-10 21:48 45-latin.conf -> ../conf.avail/45-latin.conf
+lrwxrwxrwx 1 root root  31 2010-10-10 21:48 49-sansserif.conf -> ../conf.avail/49-sansserif.conf
+lrwxrwxrwx 1 root root  26 2010-10-10 21:48 50-user.conf -> ../conf.avail/50-user.conf
+lrwxrwxrwx 1 root root  27 2010-10-10 21:48 51-local.conf -> ../conf.avail/51-local.conf
+lrwxrwxrwx 1 root root  41 2010-10-10 21:48 57-dejavu-sans.conf -> /etc/fonts/conf.avail/57-dejavu-sans.conf
+lrwxrwxrwx 1 root root  46 2010-10-10 21:48 57-dejavu-sans-mono.conf -> /etc/fonts/conf.avail/57-dejavu-sans-mono.conf
+lrwxrwxrwx 1 root root  42 2010-10-10 21:48 57-dejavu-serif.conf -> /etc/fonts/conf.avail/57-dejavu-serif.conf
+lrwxrwxrwx 1 root root  27 2010-10-10 21:48 60-latin.conf -> ../conf.avail/60-latin.conf
+lrwxrwxrwx 1 root root  46 2010-10-10 21:48 64-ttf-arphic-uming.conf -> /etc/fonts/conf.avail/64-ttf-arphic-uming.conf
+lrwxrwxrwx 1 root root  35 2010-10-10 21:48 65-fonts-persian.conf -> ../conf.avail/65-fonts-persian.conf
+lrwxrwxrwx 1 root root  30 2010-10-10 21:48 65-nonlatin.conf -> ../conf.avail/65-nonlatin.conf
+lrwxrwxrwx 1 root root  29 2010-10-10 21:48 69-unifont.conf -> ../conf.avail/69-unifont.conf
+lrwxrwxrwx 1 root root  52 2010-10-10 21:48 75-ttf-arphic-ukai-select.conf -> /etc/fonts/conf.avail/75-ttf-arphic-ukai-select.conf
+lrwxrwxrwx 1 root root  31 2010-10-10 21:48 80-delicious.conf -> ../conf.avail/80-delicious.conf
+lrwxrwxrwx 1 root root  31 2010-10-10 21:48 90-synthetic.conf -> ../conf.avail/90-synthetic.conf
+lrwxrwxrwx 1 root root  54 2010-10-10 21:48 90-ttf-arphic-ukai-embolden.conf -> /etc/fonts/conf.avail/90-ttf-arphic-ukai-embolden.conf
+lrwxrwxrwx 1 root root  55 2010-10-10 21:48 90-ttf-arphic-uming-embolden.conf -> /etc/fonts/conf.avail/90-ttf-arphic-uming-embolden.conf
+-rw-r--r-- 1 root root 959 2010-09-18 22:20 README

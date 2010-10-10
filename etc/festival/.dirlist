@@ -1,0 +1,4 @@
+.:
+total 3
+-rw-r--r-- 1 root root  466 2010-09-24 11:54 server.scm
+-rw-r--r-- 1 root root 3308 2010-09-24 11:54 siteinit.scm

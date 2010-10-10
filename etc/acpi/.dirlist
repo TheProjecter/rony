@@ -1,0 +1,8 @@
+.:
+total 1
+-rwxr-xr-x 1 root root 1214 2010-10-09 17:56 default.sh
+drwxr-xr-x 1 root root   14 2010-10-09 17:56 events
+
+./events:
+total 1
+-rw-r--r-- 1 root root 663 2010-10-09 17:56 default

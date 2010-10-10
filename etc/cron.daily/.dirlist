@@ -1,0 +1,6 @@
+.:
+total 4
+-rwxr-xr-x 1 root root   52 2010-09-18 23:11 logrotate.cron
+-rwxr-xr-x 1 root root  115 2010-09-22 14:43 makewhatis
+-rwxr-xr-x 1 root root  234 2010-09-18 23:30 polipo.sh
+-rwxr-xr-x 1 root root 4050 2010-09-24 12:05 rkhunter
