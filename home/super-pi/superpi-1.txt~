@@ -1,0 +1,75 @@
+brother@t61 /tmp/1 $ time sh super_pi 20
+ Version 2.0 of the super_pi for Linux OS
+ Fortran source program was translated into C program with version 19981204 of
+ f2c, then generated C source program was optimized manually.
+ pgcc 3.2-3 with compile option of "-fast -tp px -Mbuiltin -Minline=size:1000 -Mnoframe -Mnobounds -Mcache_align -Mdalign -Mnoreentrant" was used for the
+ compilation.
+ ------ Started super_pi run : Fri Dec 14 15:54:30 SGT 2007
+ Start of PI calculation up to 1048576 decimal digits
+ End of initialization. Time=       0.283 Sec.
+ I= 1 L=       0        Time=       0.843 Sec.
+ I= 2 L=       0        Time=       0.977 Sec.
+ I= 3 L=       1        Time=       0.977 Sec.
+ I= 4 L=       2        Time=       0.973 Sec.
+ I= 5 L=       5        Time=       0.983 Sec.
+ I= 6 L=      10        Time=       0.973 Sec.
+ I= 7 L=      21        Time=       0.973 Sec.
+ I= 8 L=      43        Time=       0.977 Sec.
+ I= 9 L=      87        Time=       0.973 Sec.
+ I=10 L=     174        Time=       0.980 Sec.
+ I=11 L=     349        Time=       0.970 Sec.
+ I=12 L=     698        Time=       0.973 Sec.
+ I=13 L=    1396        Time=       0.970 Sec.
+ I=14 L=    2794        Time=       0.970 Sec.
+ I=15 L=    5588        Time=       0.970 Sec.
+ I=16 L=   11176        Time=       0.967 Sec.
+ I=17 L=   22353        Time=       0.943 Sec.
+ I=18 L=   44707        Time=       0.913 Sec.
+ I=19 L=   89415        Time=       0.843 Sec.
+ End of main loop
+ End of calculation.    Time=      19.179 Sec.
+ End of data output.    Time=       0.127 Sec.
+ Total calculation(I/O) time=      19.305(       0.547) Sec.
+ ------ Ended super_pi run : Fri Dec 14 15:54:49 SGT 2007
+
+real	0m19.873s
+user	0m18.689s
+sys	0m0.627s
+brother@t61 /tmp/1 $ time sh super_pi 21
+ Version 2.0 of the super_pi for Linux OS
+ Fortran source program was translated into C program with version 19981204 of
+ f2c, then generated C source program was optimized manually.
+ pgcc 3.2-3 with compile option of "-fast -tp px -Mbuiltin -Minline=size:1000 -Mnoframe -Mnobounds -Mcache_align -Mdalign -Mnoreentrant" was used for the
+ compilation.
+ ------ Started super_pi run : Fri Dec 14 15:57:42 SGT 2007
+ Start of PI calculation up to 2097152 decimal digits
+ End of initialization. Time=       0.630 Sec.
+ I= 1 L=       0        Time=       1.873 Sec.
+ I= 2 L=       0        Time=       2.173 Sec.
+ I= 3 L=       1        Time=       2.170 Sec.
+ I= 4 L=       2        Time=       2.170 Sec.
+ I= 5 L=       5        Time=       2.170 Sec.
+ I= 6 L=      10        Time=       2.167 Sec.
+ I= 7 L=      21        Time=       2.167 Sec.
+ I= 8 L=      43        Time=       2.177 Sec.
+ I= 9 L=      87        Time=       2.167 Sec.
+ I=10 L=     174        Time=       2.167 Sec.
+ I=11 L=     349        Time=       2.163 Sec.
+ I=12 L=     698        Time=       2.170 Sec.
+ I=13 L=    1396        Time=       2.173 Sec.
+ I=14 L=    2794        Time=       2.157 Sec.
+ I=15 L=    5588        Time=       2.167 Sec.
+ I=16 L=   11176        Time=       2.150 Sec.
+ I=17 L=   22353        Time=       2.143 Sec.
+ I=18 L=   44707        Time=       2.110 Sec.
+ I=19 L=   89415        Time=       2.043 Sec.
+ I=20 L=  178831        Time=       1.907 Sec.
+ End of main loop
+ End of calculation.    Time=      44.814 Sec.
+ End of data output.    Time=       0.243 Sec.
+ Total calculation(I/O) time=      45.057(       3.036) Sec.
+ ------ Ended super_pi run : Fri Dec 14 15:58:27 SGT 2007
+
+real	0m45.093s
+user	0m41.931s
+sys	0m3.140s

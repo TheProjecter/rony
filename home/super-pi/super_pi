@@ -1,0 +1,5 @@
+if [ ! -e ./PI.DAT ]; then
+ln -s /dev/null PI.DAT
+fi
+nice -n -20 ./pi $1
+rm ./PI.DAT

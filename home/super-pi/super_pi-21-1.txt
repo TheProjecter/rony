@@ -1,0 +1,33 @@
+ ------ Started super_pi run : Fri Dec 14 16:19:56 SGT 2007
+ ------ Ended super_pi run : Fri Dec 14 16:20:40 SGT 2007
+ Version 2.0 of the super_pi for Linux OS
+ Fortran source program was translated into C program with version 19981204 of
+ f2c, then generated C source program was optimized manually.
+ pgcc 3.2-3 with compile option of "-fast -tp px -Mbuiltin -Minline=size:1000 -Mnoframe -Mnobounds -Mcache_align -Mdalign -Mnoreentrant" was used for the
+ compilation.
+ Start of PI calculation up to 2097152 decimal digits
+ End of initialization. Time=       0.627 Sec.
+ I= 1 L=       0        Time=       1.840 Sec.
+ I= 2 L=       0        Time=       2.133 Sec.
+ I= 3 L=       1        Time=       2.130 Sec.
+ I= 4 L=       2        Time=       2.137 Sec.
+ I= 5 L=       5        Time=       2.130 Sec.
+ I= 6 L=      10        Time=       2.133 Sec.
+ I= 7 L=      21        Time=       2.133 Sec.
+ I= 8 L=      43        Time=       2.133 Sec.
+ I= 9 L=      87        Time=       2.130 Sec.
+ I=10 L=     174        Time=       2.133 Sec.
+ I=11 L=     349        Time=       2.133 Sec.
+ I=12 L=     698        Time=       2.130 Sec.
+ I=13 L=    1396        Time=       2.133 Sec.
+ I=14 L=    2794        Time=       2.127 Sec.
+ I=15 L=    5588        Time=       2.127 Sec.
+ I=16 L=   11176        Time=       2.120 Sec.
+ I=17 L=   22353        Time=       2.103 Sec.
+ I=18 L=   44707        Time=       2.070 Sec.
+ I=19 L=   89415        Time=       2.010 Sec.
+ I=20 L=  178831        Time=       1.870 Sec.
+ End of main loop
+ End of calculation.    Time=      44.050 Sec.
+ End of data output.    Time=       0.263 Sec.
+ Total calculation(I/O) time=      44.314(       2.983) Sec.
