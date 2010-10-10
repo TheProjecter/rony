@@ -1,0 +1,9 @@
+total 177
+drwxr-xr-x 1 root root    130 2010-10-10 21:33 .
+drwxr-xr-x 1 root root   2572 2010-10-10 18:50 ..
+-rw-r--r-- 1 root root      0 2010-10-10 21:33 DIR
+-rwxr-xr-x 1 root root 175952 2010-09-24 13:18 squid_redirect
+-rw-r--r-- 1 root root    590 2010-09-24 13:18 update-zapper
+-rw-r--r-- 1 root root    660 2010-09-24 13:18 update-zapper.damien
+-rwxr-xr-x 1 root root   2736 2010-09-24 13:18 wrapzap
+-rwxr-xr-x 1 root root   1618 2010-09-24 13:18 zapchain
