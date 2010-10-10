@@ -1,0 +1,43 @@
+# exec startkde
+# startkde
+
+
+export LANG="en_US.UTF-8"
+export LC_ALL="en_US.UTF-8"
+LANG="en_US.UTF-8" scim -d
+
+#export XMODIFIERS=@im=SCIM
+#export XMODIFIER=@im=SCIM
+#export XIM_PROGRAM="scim -d"
+##export XIM_PROGRAM="scim"
+#export GTK_IM_MODULE=scim
+#export QT_IM_MODULE=scim
+#scim -d
+
+
+# exec glipper &
+#exec gkrellm -w &
+exec xterm -fg wheat -bg black -fn -misc-fixed-medium-r-normal--18-120-100-100-c-90-iso10646-1 &
+#exec xterm -fg wheat -bg black -fn -misc-fixed-medium-r-normal--18-120-100-100-c-90-iso10646-1 &
+
+#exec xautolock -time 4 -locker "xlock -mode blank" &
+#exec xset dpms 180 600 900 &    # dpms: standy, suspend, off
+# exec conky &
+
+# https://wiki.ubuntu.com/X/Config/DontZap
+#setxkbmap -option terminate:ctrl_alt_bksp
+# with HAL, /usr/share/hal/fdi/policy/10osvendor/10-x11-input.fdi (inside the <match key="info.capabilities" contains="input.keys"> section)
+# <merge key="input.xkb.options" type="string">terminate:ctrl_alt_bksp</merge>
+
+
+# exec startfluxbox
+# exec evilwm -nosoliddrag -bw 4 -snap 12
+# exec startxfce4
+# exec beryl
+# exec beryl-manager
+
+
+# find xterm fonts with xlsfont
+# xterm -fg wheat -bg black -fn -misc-fixed-medium-r-normal--18-120-100-100-c-90-iso10646-1 is ok
+
+
