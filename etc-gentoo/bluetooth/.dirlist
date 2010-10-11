@@ -1,8 +1,0 @@
-.:
-total 3
--rw-r--r-- 1 root root 1482 2010-10-09 00:57 audio.conf
--rw-r--r-- 1 root root  262 2010-10-09 00:57 input.conf
--rw-r--r-- 1 root root 2228 2010-10-09 00:57 main.conf
--rw-r--r-- 1 root root  120 2010-10-09 00:57 network.conf
--rw-r--r-- 1 root root  297 2010-10-09 00:57 rfcomm.conf
--rw-r--r-- 1 root root  248 2010-10-09 00:57 serial.conf
