@@ -1,8 +1,0 @@
-.:
-total 3
--rw-r--r-- 1 root root 1216 2009-05-07 00:14 aliases.conf
--rw-r--r-- 1 root root 1028 2010-10-09 17:50 alsa.conf
--rw-r--r-- 1 root root  950 2010-10-09 17:53 blacklist.conf
--rw-r--r-- 1 root root  122 2009-05-07 00:14 i386.conf
--rw-r--r-- 1 root root  537 2010-10-09 17:53 pnp-aliases.conf
--rw-r--r-- 1 root root  196 2010-09-17 21:54 usb-load-ehci-first.conf
