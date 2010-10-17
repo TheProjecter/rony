@@ -65,6 +65,7 @@ upgrade() {
 }
 
 configtest() {
+	[ -d /var/tmp/nginx ] || mkdir /var/tmp/nginx -m 0755
 	ebegin "Checking nginx' configuration"
 	/usr/sbin/nginx -c /etc/nginx/nginx.conf -t
 	eend $? "failed, please correct errors above"
