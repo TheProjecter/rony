@@ -1,9 +1,13 @@
 #!/bin/sh
+# thinkpad_t61_battery.sh: list battery status
+
+# Author: Rony Yeung
+# License: Public Domanin
 
 F=/sys/devices/platform/smapi
 
 [ -d ${F} ] || {
-	printf "module smapi not loaded."
+	printf "Module smapi not loaded."
 	exit 1
 }
 
@@ -12,4 +16,3 @@ ls ${F} | while read S; do
 	printf "%-28s" ${S}
 	cat ${F}/${S}
 done
-
