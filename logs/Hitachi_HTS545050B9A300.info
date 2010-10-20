@@ -1,0 +1,11 @@
+smartctl 5.40 2010-10-16 r3189 [x86_64-pc-linux-gnu] (local build)
+Copyright (C) 2002-10 by Bruce Allen, http://smartmontools.sourceforge.net
+
+Drive found in smartmontools Database.  Drive identity strings:
+MODEL:              Hitachi HTS545050B9A300
+FIRMWARE:           PB4OC64G
+match smartmontools Drive Database entry:
+MODEL REGEXP:       (Hitachi )?HT[ES]5450(12|16|25|32|40|50)B9A30[01]
+FIRMWARE REGEXP:    .*
+MODEL FAMILY:       Hitachi Travelstar 5K500.B
+ATTRIBUTE OPTIONS:  None preset; no -v options are required.
