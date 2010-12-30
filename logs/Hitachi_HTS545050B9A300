@@ -10,7 +10,7 @@ User Capacity:    500,107,862,016 bytes
 Device is:        In smartctl database [for details use: -P show]
 ATA Version is:   8
 ATA Standard is:  ATA-8-ACS revision 6
-Local Time is:    Thu Dec 30 09:13:55 2010 SGT
+Local Time is:    Thu Dec 30 09:17:36 2010 SGT
 SMART support is: Available - device has SMART capability.
 SMART support is: Enabled
 
@@ -63,8 +63,8 @@ ID# ATTRIBUTE_NAME          FLAG     VALUE WORST THRESH TYPE      UPDATED  WHEN_
  10 Spin_Retry_Count        0x0013   100   100   060    Pre-fail  Always       -       0
  12 Power_Cycle_Count       0x0032   100   100   000    Old_age   Always       -       39
 191 G-Sense_Error_Rate      0x000a   100   100   000    Old_age   Always       -       0
-192 Power-Off_Retract_Count 0x0032   100   100   000    Old_age   Always       -       703660042
-193 Load_Cycle_Count        0x0012   093   093   000    Old_age   Always       -       72561
+192 Power-Off_Retract_Count 0x0032   100   100   000    Old_age   Always       -       703725578
+193 Load_Cycle_Count        0x0012   093   093   000    Old_age   Always       -       72573
 194 Temperature_Celsius     0x0002   177   177   000    Old_age   Always       -       31 (Min/Max 22/42)
 196 Reallocated_Event_Count 0x0032   100   100   000    Old_age   Always       -       0
 197 Current_Pending_Sector  0x0022   100   100   000    Old_age   Always       -       0
