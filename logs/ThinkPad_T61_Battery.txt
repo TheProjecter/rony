@@ -1,46 +1,46 @@
 barcoding                   1ZDVF7B70R0
-charging_max_current        3500
-charging_max_voltage        12600
+charging_max_current        0
+charging_max_voltage        0
 chemistry                   LION
 current_avg                 0
 current_now                 0
-cycle_count                 264
+cycle_count                 290
 design_capacity             56160
 design_voltage              10800
 dump                        c0 80 01 02 e0 5a 00 00 00 00 00 00 00 00 00 00 
-c0 c0 00 80 e6 0b 89 2e 00 00 00 00 45 00 8b 0d 
-c0 c0 af 13 ff ff ff ff ff ff c0 00 08 01 -- 00 
+c0 c0 00 80 b0 0b e1 30 00 00 00 00 64 00 5a 13 
+c0 c0 5a 13 ff ff ff ff ff ff e0 00 22 01 -- 00 
 c0 c0 f0 15 30 2a 31 00 67 37 18 03 -- -- -- 00 
 c0 c0 50 61 6e 61 73 6f 6e 69 63 00 00 00 00 00 
 c0 c0 34 32 54 35 32 36 34 00 00 00 00 00 00 00 
 c0 c0 4c 49 4f 4e 00 43 44 f3 00 00 00 00 00 00 
 c0 c0 31 5a 44 56 46 37 42 37 30 52 30 00 00 00 
 c0 c0 85 37 -- -- -- -- -- -- -- -- -- -- -- 00 
-c0 c0 18 00 03 00 ac 0d 38 31 -- -- -- -- -- 00 
-c0 c0 42 43 44 f3 00 00 87 0f 81 0f 81 0f 04 70 
+c0 c0 18 00 00 00 00 00 00 00 -- -- -- -- -- 00 
+c0 c0 42 43 44 f3 00 00 51 10 4b 10 45 10 04 70 
 first_use_date              2007-12-05
 force_discharge             0
-group0_voltage              3969
-group1_voltage              3969
-group2_voltage              3975
+group0_voltage              4165
+group1_voltage              4171
+group2_voltage              4177
 group3_voltage              0
 inhibit_charge_minutes      0
 installed                   1
-last_full_capacity          50390
+last_full_capacity          49540
 manufacture_date            2007-11-07
 manufacturer                Panasonic
 model                       42T5264
 power_avg                   0
 power_now                   0
-remaining_capacity          34670
+remaining_capacity          49540
 remaining_charging_time     not_charging
-remaining_percent           69
-remaining_percent_error     3
+remaining_percent           100
+remaining_percent_error     0
 remaining_running_time      not_discharging
 remaining_running_time_now  not_discharging
 serial                      792
-start_charge_thresh         40
+start_charge_thresh         38
 state                       idle
 stop_charge_thresh          70
-temperature                 31500
-voltage                     11913
+temperature                 26100
+voltage                     12513
